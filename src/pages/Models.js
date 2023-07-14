@@ -12,7 +12,7 @@ const Cars = () => {
   }, []);
 
   return (
-    <div className='container d-flex flex-row'>
+    <div className="container d-flex flex-row">
       {cars.map((car) => (
         <CarModel car={car} key={car.id} />
       ))}
