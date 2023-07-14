@@ -2,11 +2,14 @@ import PropTypes from 'prop-types';
 
 const CarModel = ({ car }) => (
   <div className="card" key={car.id}>
-    <div className="card-body">
-      <img src={car.image} alt={car.name} />
-      <h5 className="card-title">{car.name}</h5>
-      <p className="card-text">{car.description}</p>
+    <div className="img-cont">
+      <img className="img" src={car.image} alt={car.name} />
     </div>
+    <h5 className="card-title">
+      {car.name}
+    </h5>
+    <p className="x">x x x x x x x x x x x x x x x x x x x x</p>
+    <p className="card-text">{car.description}</p>
   </div>
 );
 

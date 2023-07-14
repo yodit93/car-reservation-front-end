@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/models.css';
 import CarModel from '../components/CarModel';
 
 const Cars = () => {
@@ -12,10 +13,16 @@ const Cars = () => {
   }, []);
 
   return (
-    <div className="container d-flex flex-row">
-      {cars.map((car) => (
-        <CarModel car={car} key={car.id} />
-      ))}
+    <div className="container">
+      <div className="header">
+        <h1 className="header-title">LATEST MODELS</h1>
+        <p className="header-subtitle">The most recent models of our cars</p>
+      </div>
+      <div className="cars">
+        {cars.map((car) => (
+          <CarModel car={car} key={car.id} />
+        ))}
+      </div>
     </div>
   );
 };
