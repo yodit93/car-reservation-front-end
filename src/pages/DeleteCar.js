@@ -1,11 +1,7 @@
 import React from 'react';
-import NavigationPanel from '../Components/Navigation/NavigationPanel';
 
 const DeleteCar = () => (
-  <div style={{ display: 'flex' }}>
-    <NavigationPanel />
-    <h1 className="text-center">Delete Car page</h1>
-  </div>
+  <div>Delete Car page</div>
 );
 
 export default DeleteCar;
