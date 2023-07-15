@@ -84,11 +84,6 @@ body {
 }
 
 @media  screen and (min-width: 768px) {
-    .holder {
-        display: flex;
-        justify-content: flex-end;
-    }
-
     .contr {
         width: 70vw;
         margin: 0 auto;
