@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/models.css';
 import CarModel from '../components/CarModel';
+import NavigationPanel from '../components/Navigation/NavigationPanel';
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
@@ -32,19 +33,22 @@ const Cars = () => {
   };
 
   return (
-    <div className="contr">
-      <div className="header">
-        <h1 className="header-title">LATEST MODELS</h1>
-        <p className="header-subtitle">The most recent models of our cars</p>
-      </div>
-      <div className="wrap">
-        <button type="button" className="prev btn" onClick={scrollLeft}>&lt;</button>
-        <div className="cars" ref={containerRef}>
-          {cars.map((car) => (
-            <CarModel car={car} key={car.id} />
-          ))}
+    <div className="home-container">
+      <NavigationPanel />
+      <div className="contr">
+        <div className="header">
+          <h1 className="header-title">LATEST MODELS</h1>
+          <p className="header-subtitle">The most recent models of our cars</p>
         </div>
-        <button type="button" className="next btn" onClick={scrollRight}>&gt;</button>
+        <div className="wrap">
+          <button type="button" className="prev btn" onClick={scrollLeft}>&lt;</button>
+          <div className="cars" ref={containerRef}>
+            {cars.map((car) => (
+              <CarModel car={car} key={car.id} />
+            ))}
+          </div>
+          <button type="button" className="next btn" onClick={scrollRight}>&gt;</button>
+        </div>
       </div>
     </div>
   );
