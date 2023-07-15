@@ -16,6 +16,15 @@ export const getCars = createAsyncThunk('cars/getCars', async (_, { rejectWithVa
     return rejectWithValue('Unable to fetch data');
   }
 });
+export const createCar = createAsyncThunk('cars/createCar', async (carData, { rejectWithValue }) => {
+  try {
+    const response = await axios.post(url, carData);
+    return response.data;
+  } catch (err) {
+    return rejectWithValue('Unable to create car');
+  }
+});
+
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
@@ -31,6 +40,20 @@ const carsSlice = createSlice({
         isLoading: false,
       }))
       .addCase(getCars.rejected, (state, { payload }) => ({
+        ...state,
+        isLoading: false,
+        error: payload,
+      }))
+      .addCase(createCar.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(createCar.fulfilled, (state, { payload }) => ({
+        ...state,
+        cars: [...state.cars, payload], // Add the created car to the existing list
+        isLoading: false,
+      }))
+      .addCase(createCar.rejected, (state, { payload }) => ({
         ...state,
         isLoading: false,
         error: payload,
