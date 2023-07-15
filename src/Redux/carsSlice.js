@@ -32,6 +32,14 @@ export const updateCar = createAsyncThunk('cars/updateCar', async ({ carId, carD
     return rejectWithValue('Unable to update car');
   }
 });
+export const deleteCar = createAsyncThunk('cars/deleteCar', async (carId, { rejectWithValue }) => {
+  try {
+    await axios.delete(`${url}/${carId}`);
+    return carId;
+  } catch (err) {
+    return rejectWithValue('Unable to delete car');
+  }
+});
 
 const carsSlice = createSlice({
   name: 'cars',
@@ -85,6 +93,20 @@ const carsSlice = createSlice({
         };
       })
       .addCase(updateCar.rejected, (state, { payload }) => ({
+        ...state,
+        isLoading: false,
+        error: payload,
+      }))
+      .addCase(deleteCar.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(deleteCar.fulfilled, (state, { payload }) => ({
+        ...state,
+        cars: state.cars.filter((car) => car.id !== payload),
+        isLoading: false,
+      }))
+      .addCase(deleteCar.rejected, (state, { payload }) => ({
         ...state,
         isLoading: false,
         error: payload,
