@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AddCar = () => (
-  <div>AddCar Page</div>
+  <div>Add Car Page</div>
 );
 
 export default AddCar;
