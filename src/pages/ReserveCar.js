@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ReserveCar = () => (
-  <div>Reserve Page</div>
+  <div>ReserveCar</div>
 );
 
 export default ReserveCar;
