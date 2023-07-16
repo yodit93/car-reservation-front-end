@@ -78,7 +78,7 @@ const usersSlice = createSlice({
         isLoading: true,
       }))
       .addCase(updateUser.fulfilled, (state, { payload }) => {
-        const updatedUser = state.users.map((user) => {
+        const updatedUsers = state.users.map((user) => {
           if (user.id === payload.id) {
             return payload; // Replace the updated user in the list
           }
@@ -87,7 +87,7 @@ const usersSlice = createSlice({
 
         return {
           ...state,
-          users: updatedUser,
+          users: updatedUsers,
           isLoading: false,
         };
       })
