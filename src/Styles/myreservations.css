@@ -43,6 +43,14 @@
     padding: 12px;
     height: 2rem;
 }
+.delete_reservation {
+    background-color: #ff5f5f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
 }
 @media (min-width: 769px){
     .reservation_main_container{
@@ -88,6 +96,13 @@
         padding: 12px;
         height: 5rem;
     }
-    
+    .delete_reservation {
+        background-color: #ff5f5f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
 
 }
