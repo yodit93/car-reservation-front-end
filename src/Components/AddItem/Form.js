@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Input from './Input';
 import { createCar } from '../../Redux/carsSlice';
 
 const Form = () => {
+  const [isdisabled, setIsDisabled] = useState(true);
   const [formdata, setFormData] = useState({
     name: '',
     image: '',
@@ -26,10 +27,20 @@ const Form = () => {
     });
   };
 
+  useEffect(() => {
+    const {
+      name, image, description, model, price,
+    } = formdata;
+    if (name && image && description && model && price) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  }, [formdata]);
+
   const formSubmission = (e) => {
     e.preventDefault();
     dispatch(createCar(formdata));
-    console.log(formdata);
     setFormData({
       name: '',
       image: '',
@@ -80,8 +91,11 @@ const Form = () => {
         value={description}
         required
         onChange={handelFormInputs}
+        placeholder="Description"
       />
-      <button type="submit">Add Car</button>
+      <div className="submit-btn">
+        <button type="submit" disabled={isdisabled}>Create</button>
+      </div>
     </form>
   );
 };

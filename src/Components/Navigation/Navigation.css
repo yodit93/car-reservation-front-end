@@ -118,6 +118,7 @@ footer p {
     height: 60px;
     background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
     border-bottom: 1px solid #bebebe68;
+    background-color: #fff;
   }
 
   header .mobile-nav-container .logo {

@@ -6,8 +6,9 @@ import '../Styles/AddCar.css';
 const AddCar = () => (
   <div className="add-car-page">
     <NavigationPanel />
-    <div className="add-car-container">
-      {' '}
+    <div id="add-car-container">
+      <h1>Add Car</h1>
+      <div className="add-car-overlay" />
       <Form />
       {' '}
     </div>
