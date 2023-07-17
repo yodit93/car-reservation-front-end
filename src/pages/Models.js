@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Models = () => (
-  <div>Home Page</div>
+  <div>Models</div>
 );
-
 export default Models;

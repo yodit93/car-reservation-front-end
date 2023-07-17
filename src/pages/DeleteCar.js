@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DeleteCar = () => (
-  <div>DeleteCar page</div>
+  <div>Delete Car page</div>
 );
 
 export default DeleteCar;
