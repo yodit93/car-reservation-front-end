@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservations } from '../Redux/reservationsSlice';
+import { getReservations, deleteReservation } from '../Redux/reservationsSlice';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
 import '../Styles/myreservations.css';
 
@@ -11,6 +11,14 @@ const MyReservations = () => {
   useEffect(() => {
     dispatch(getReservations());
   }, [dispatch]);
+
+  const handleDelete = (id) => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this Reservation?');
+    if (confirmDelete) {
+      dispatch(deleteReservation(id));
+      dispatch(deleteReservation(id));
+    }
+  };
 
   return (
     <div className="reservation_main_container">
@@ -39,7 +47,7 @@ const MyReservations = () => {
                     {' '}
                     {reservation.end_date}
                   </p>
-                  <button type='button'>delete</button>
+                  <button type="button" onClick={() => handleDelete(reservation.id)}>delete</button>
                 </div>
               </div>
             </div>
