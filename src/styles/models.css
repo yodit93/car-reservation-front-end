@@ -109,7 +109,7 @@ body {
         display: flex;
     }
     .contr {
-        width: 80%;
+        width: 80.45%;
         margin: 0 auto;
         padding-top: 2rem;
         display: flex;
@@ -149,7 +149,7 @@ body {
 
     .btn {
         display: inline;
-        background-color: rgb(100, 234, 100);
+        background-color: rgb(150, 191, 1);
         width: 4rem;
         height: 3rem;
         border: none;
@@ -166,10 +166,10 @@ body {
     }
 
     .prev.disabled {
-        background-color: #eaeaea;
+        background-color: #f0f0f0;
     }
 
     .next.disabled {
-        background-color: #ccc;
+        background-color: #f0f0f0;
     }
 }
