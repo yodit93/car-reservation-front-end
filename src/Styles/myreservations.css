@@ -44,3 +44,12 @@
     height: 2rem;
 }
 }
+@media (min-width: 769px){
+    .reservation_main_container{
+        display: flex; 
+        
+    }
+   
+    
+
+}
