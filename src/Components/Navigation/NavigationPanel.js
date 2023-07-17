@@ -27,7 +27,7 @@ const NavigationPanel = () => {
         <Logo />
         <Navigation />
         <footer>
-          <SocialIcons />
+          <SocialIcons className="social-icons" />
           <p>&copy; 2023 - CARBOOKER</p>
           <br />
         </footer>

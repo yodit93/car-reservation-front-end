@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import SocialIcons from './Navigation/SocialIcons';
 
 const CarModel = ({ car }) => (
   <div className="card" key={car.id}>
@@ -10,6 +11,7 @@ const CarModel = ({ car }) => (
     </h5>
     <p className="x">x x x x x x x x x x x x x x x x x x x x</p>
     <p className="card-text">{car.description}</p>
+    <SocialIcons className="home-social-links" />
   </div>
 );
 

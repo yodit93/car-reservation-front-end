@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
 }
 
 .contr {
@@ -24,7 +25,7 @@ body {
 
 .header-title {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 900;
     margin-bottom: 0.5rem;
 }
 
@@ -83,6 +84,26 @@ body {
     display: none;
 }
 
+.home-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 0.5rem;
+    color: #ccc;
+    font-size: 0.3rem;
+}
+
+.home-social-links li {
+    padding: 0.4rem;
+    border: 2px solid #d8d8d8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.home-social-links li:last-child {
+    display: none;
+}
+
 @media  screen and (min-width: 768px) {
     .home-container {
         display: flex;
@@ -110,12 +131,8 @@ body {
     }
     
     .card {
-        flex: 0 0 calc(33.3333% - 1rem);
+        flex: 0 0 calc(50% - 1rem);
         margin: 0 0.5rem;
-    }
-
-    .card:last-child {
-        margin-right: 0;
     }
 
     ::-webkit-scrollbar {
@@ -127,7 +144,7 @@ body {
     }
     
     .img {
-       width: 100%; 
+       width: 100%;
     }
 
     .btn {
@@ -136,7 +153,7 @@ body {
         width: 4rem;
         height: 3rem;
         border: none;
-        margin-top: 2rem;
+        margin-top: 4rem;
         cursor: pointer;
     }
 
@@ -146,5 +163,13 @@ body {
 
     .next {
         border-radius: 20px 0 0 20px;
+    }
+
+    .prev.disabled {
+        background-color: #eaeaea;
+    }
+
+    .next.disabled {
+        background-color: #ccc;
     }
 }
