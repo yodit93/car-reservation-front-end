@@ -27,27 +27,27 @@ const MyReservations = () => {
         <h2 className="reservations_header">
           My Reservations
         </h2>
-        <div>
+        <div className="card_main_container">
           {reservations.map((reservation) => (
             <div key={reservation.id}>
               <div className="card_container">
                 <div className="card_wrapper">
                   <h2>{reservation.car}</h2>
-                  <p>
+                  <p className="card_detail">
                     city:
                     {reservation.city}
                   </p>
-                  <p>
+                  <p className="card_detail">
                     start Date:
                     {' '}
                     {reservation.start_date}
                   </p>
-                  <p>
+                  <p className="card_detail">
                     End Date:
                     {' '}
                     {reservation.end_date}
                   </p>
-                  <button type="button" onClick={() => handleDelete(reservation.id)}>delete</button>
+                  <button type="button" className="delete_reservation" onClick={() => handleDelete(reservation.id)}>delete</button>
                 </div>
               </div>
             </div>
