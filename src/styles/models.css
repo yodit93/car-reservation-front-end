@@ -1,175 +1,176 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .contr {
-    width: 100vw;
-    height: 100vh;
-   padding-top: 2rem; 
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2rem;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
 }
 
 .header-title {
-    font-size: 2rem;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
 }
 
 .header-subtitle {
-    font-size: 0.8rem;
-    color: #666;
+  font-size: 0.8rem;
+  color: #666;
 }
 
 .cars {
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .img-cont {
-    max-width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .img {
-    width: 90%;
-    height: auto;
-    border-radius: 15px;
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
 }
 
 .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 .x {
-    font-size: 0.3rem;
-    margin-bottom: 1.5rem;
-    color: #666;
+  font-size: 0.3rem;
+  margin-bottom: 1.5rem;
+  color: #666;
 }
 
 .card-text {
-    font-size: 0.8rem;
-    color: #666;
+  font-size: 0.8rem;
+  color: #666;
 }
 
 .btn {
-    display: none;
+  display: none;
 }
 
 .home-social-links {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 0.5rem;
-    color: #ccc;
-    font-size: 0.3rem;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 0.5rem;
+  color: #ccc;
+  font-size: 0.3rem;
 }
 
 .home-social-links li {
-    padding: 0.4rem;
-    border: 2px solid #d8d8d8;
-    border-radius: 50%;
-    cursor: pointer;
+  padding: 0.4rem;
+  border: 2px solid #d8d8d8;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .home-social-links li:last-child {
-    display: none;
+  display: none;
 }
 
-@media  screen and (min-width: 768px) {
-    .home-container {
-        display: flex;
-    }
-    .contr {
-        width: 80.45%;
-        margin: 0 auto;
-        padding-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+@media screen and (min-width: 768px) {
+  .home-container {
+    display: flex;
+  }
 
-    .wrap {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
-    
-    .cars {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-    
-    .card {
-        flex: 0 0 calc(50% - 1rem);
-        margin: 0 0.5rem;
-    }
+  .contr {
+    width: 80.45%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    ::-webkit-scrollbar {
-        background-color: transparent;
-    }
-      
-    .img-cont {
-        max-width: 100%;
-    }
-    
-    .img {
-       width: 100%;
-    }
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-    .btn {
-        display: inline;
-        background-color: rgb(150, 191, 1);
-        width: 4rem;
-        height: 3rem;
-        border: none;
-        margin-top: 4rem;
-        cursor: pointer;
-    }
+  .cars {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
 
-    .prev {
-        border-radius: 0 20px 20px 0;
-    }
+  .card {
+    flex: 0 0 calc(50% - 1rem);
+    margin: 0 0.5rem;
+  }
 
-    .next {
-        border-radius: 20px 0 0 20px;
-    }
+  ::-webkit-scrollbar {
+    background-color: transparent;
+  }
 
-    .prev.disabled {
-        background-color: #f0f0f0;
-    }
+  .img-cont {
+    max-width: 100%;
+  }
 
-    .next.disabled {
-        background-color: #f0f0f0;
-    }
+  .img {
+    width: 100%;
+  }
+
+  .btn {
+    display: inline;
+    background-color: rgb(150, 191, 1);
+    width: 4rem;
+    height: 3rem;
+    border: none;
+    margin-top: 4rem;
+    cursor: pointer;
+  }
+
+  .prev {
+    border-radius: 0 20px 20px 0;
+  }
+
+  .next {
+    border-radius: 20px 0 0 20px;
+  }
+
+  .prev.disabled {
+    background-color: #f0f0f0;
+  }
+
+  .next.disabled {
+    background-color: #f0f0f0;
+  }
 }
