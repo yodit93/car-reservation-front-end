@@ -101,22 +101,29 @@ body {
         justify-content: space-between;
         width: 100%;
     }
-
+    
     .cars {
-        width: 80%;
+        width: 100%;
         flex-direction: row;
-        justify-content: center;
-        gap: 1.5rem;
-        overflow: hidden;
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
-
+    
     .card {
-        width: 30%;
-        flex-shrink: 0;
+        flex: 0 0 calc(33.3333% - 1rem);
+        margin: 0 0.5rem;
     }
 
+    .card:last-child {
+        margin-right: 0;
+    }
+
+    ::-webkit-scrollbar {
+        background-color: transparent;
+    }
+      
     .img-cont {
-        max-width: 500px;
+        max-width: 100%;
     }
     
     .img {
@@ -130,6 +137,7 @@ body {
         height: 3rem;
         border: none;
         margin-top: 2rem;
+        cursor: pointer;
     }
 
     .prev {

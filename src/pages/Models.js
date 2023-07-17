@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/models.css';
-import CarModel from '../components/CarModel';
-import NavigationPanel from '../components/Navigation/NavigationPanel';
+import CarModel from '../Components/CarModel';
+import NavigationPanel from '../Components/Navigation/NavigationPanel';
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
@@ -16,7 +16,7 @@ const Cars = () => {
 
   const scrollLeft = () => {
     const container = containerRef.current;
-    const scrollAmount = container.offsetWidth;
+    const scrollAmount = container.offsetWidth / 3;
     container.scrollTo({
       left: container.scrollLeft - scrollAmount,
       behavior: 'smooth',
@@ -25,7 +25,7 @@ const Cars = () => {
 
   const scrollRight = () => {
     const container = containerRef.current;
-    const scrollAmount = container.offsetWidth;
+    const scrollAmount = container.offsetWidth / 3;
     container.scrollTo({
       left: container.scrollLeft + scrollAmount,
       behavior: 'smooth',
