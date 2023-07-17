@@ -47,7 +47,7 @@ const MyReservations = () => {
                     {' '}
                     {reservation.end_date}
                   </p>
-                  <button type="button" className="delete_reservation" onClick={() => handleDelete(reservation.id)}>delete</button>
+                  <button type="button" className="delete_reservation" onClick={() => handleDelete(reservation.id)}>Delete</button>
                 </div>
               </div>
             </div>
