@@ -30,11 +30,11 @@ const MyReservations = () => {
   return (
     <div className="reservation_main_container">
       <NavigationPanel />
-      <div className="reservation_container" id="add-car-overlay">
+      <div className="reservation_container">
         <h2 className="reservations_header">
           My Reservations
         </h2>
-        <div className="card_main_container">
+        <div className="card_main_container" id="add-car-overlay">
           {reservations.map((reservation) => (
             <div key={reservation.id}>
               <div className="card_container">
