@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/models.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
 import { scrollLeft, scrollRight, handleScroll } from '../Components/scrollUtilis';
 import { getCars } from '../Redux/carsSlice';
-import CarModel from '../Components/CarModel';
+import CarModel from '../Components/CarModel.js';
 
 const Cars = () => {
   const { cars, error, isLoading } = useSelector((state) => state.cars);
@@ -47,7 +48,7 @@ const Cars = () => {
               disabled={isPrevDisabled}
               ref={prevBtnRef}
             >
-              &lt;
+              <BiLeftArrow />
             </button>
             <div
               className="cars"
@@ -65,7 +66,7 @@ const Cars = () => {
               disabled={isNextDisabled}
               ref={nextBtnRef}
             >
-              &gt;
+              <BiRightArrow />
             </button>
           </div>
         </div>
