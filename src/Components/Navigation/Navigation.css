@@ -219,6 +219,7 @@ footer p {
     background-color: rgba(0, 0, 0, 0.5);
     left: -100%;
     cursor: pointer;
+    z-index: 8;
   }
 
   .active {
