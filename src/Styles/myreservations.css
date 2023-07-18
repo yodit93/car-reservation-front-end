@@ -1,49 +1,62 @@
-@media (max-width: 768px){
-  .reservation_main_container{
+@media (max-width: 768px) {
+  .reservation_main_container {
     display: flex;
     flex-direction: column;
   }
- .reservation_container{
+
+  .reservation_container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-image: url('https://s1.1zoom.me/big0/660/Shelby_Super_Cars_White_background_White_559662_1280x853.jpg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRioazmTDfs2d1qHdvw6Euz5o2-AOZhRWNjySEA0xBmONFsKIlj8Cg2ovY8YHYGRsi2ed0&usqp=CAU');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
- } 
- .reservation_container::before {
+  }
+  .add-car-overlay {
+    position: absolute;
+    height: 92vh;
+    width: 100vw;
+    background-color: rgb(102, 130, 1);
+    mix-blend-mode: darken;
+  }
+
+  /* .reservation_container::before {
     content: '';
     position: absolute;
-    top: 10;
+    top: 9;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, rgba(0, 128, 0, 0.295), rgba(0, 255, 0, 0.282));
- }
- .reservations_header{
+  } */
+
+  .reservations_header {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 25px;
-    color: white;
-}
- .card_main_container{
+    color: black;
+  }
+
+  .card_main_container {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    gap: 30px;
+    width: 70%;
+    gap: 40px;
     overflow: hidden;
     z-index: 10;
-}
-.card_container{
+  }
+
+  .card_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
-}
-.card_wrapper{
+  }
+
+  .card_wrapper {
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
@@ -51,17 +64,20 @@
     justify-content: center;
     padding: 20px;
     border: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.647);
+    background-color: rgba(0, 0, 0, 0.647);
     border-radius: 7px;
     z-index: 10;
-}
-.card_detail{
-    width: 30vw;
+    font-weight: 700;
+    color: white;
+  }
+
+  .card_detail {
     padding: 12px;
     height: 4rem;
     z-index: 10;
-}
-.delete_reservation {
+  }
+
+  .delete_reservation {
     background-color: #ff5f5f;
     color: white;
     border: none;
@@ -71,81 +87,85 @@
     z-index: 10;
   }
 }
-@media (min-width: 769px){
-    .reservation_main_container{
-        display: flex; 
-        
-    }
-    .reservation_container{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        background-image: url('https://s1.1zoom.me/big0/660/Shelby_Super_Cars_White_background_White_559662_1280x853.jpg');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-    /* .reservation_container::before {
+
+@media (min-width: 769px) {
+  .reservation_main_container {
+    display: flex;
+  }
+
+  .reservation_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://s1.1zoom.me/big0/660/Shelby_Super_Cars_White_background_White_559662_1280x853.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  /* .reservation_container::before {
         content: '';
         position: absolute;
         top: 0;
         left: 20;
         width: 100%;
         height: 100%;
-        background: linear-gradient(45deg, rgba(0, 128, 0, 0.132), rgba(0, 255, 0, 0.248));
-        
+        background: linear-gradient(45deg, rgba(0, 128, 0, 0.567), rgba(0, 255, 0, 0.78));
+
     } */
-    
-    .reservations_header{
-        text-align: center;
-        margin-top: 2rem;
-        font-size: 36px;
-        z-index: 10;
-    }
-   
-    .card_main_container{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        gap: 30px;
-        z-index: 10;
-    }
 
-    .card_container{
-        display: flex;
-        width: 100%;
-        gap: 20px;
-        padding: 20px;
-        z-index: 10;
-    }
-   
-    .card_wrapper{
-        width: 100%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px;
-        border: 1px solid white;
-        background-color: rgba(10, 10, 10, 0.5);
-        border-radius: 7px;
-        z-index: 10;
-        color: white;
-    }
-    .card_detail{
-        width: 100%;
-        padding: 12px;
-        height: 5rem;
-        z-index: 10;
-    }
-    .delete_reservation {
-        background-color: #ff5f5f;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 8px 16px;
-        cursor: pointer;
-        z-index: 10;
-      }
+  .reservations_header {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 36px;
+    z-index: 10;
+  }
 
+  .card_main_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 30px;
+    z-index: 10;
+  }
+
+  .card_container {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    z-index: 10;
+  }
+
+  .card_wrapper {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid white;
+    background-color: rgba(17, 17, 17, 0.776);
+    border-radius: 7px;
+    z-index: 10;
+    color: white;
+    font-weight: 700;
+  }
+
+  .card_detail {
+    width: 100%;
+    padding: 12px;
+    height: 5rem;
+    z-index: 10;
+  }
+
+  .delete_reservation {
+    background-color: #ff5f5f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    z-index: 10;
+  }
 }
