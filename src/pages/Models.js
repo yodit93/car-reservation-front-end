@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/models.css';
 import { useDispatch, useSelector } from 'react-redux';
-import CarModel from '../Components/CarModel';
+import CarModel from '../Components/CarModel.js';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
 import { scrollLeft, scrollRight, handleScroll } from '../Components/scrollUtilis';
 import { getCars } from '../Redux/carsSlice';
