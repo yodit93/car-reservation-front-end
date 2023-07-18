@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import SocialIcons from './Navigation/SocialIcons.js';
+import SocialIcons from '../Navigation/SocialIcons.js';
 
 const CarModel = ({ car }) => (
   <div className="card" key={car.id}>

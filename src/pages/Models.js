@@ -3,9 +3,9 @@ import '../Styles/models.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
-import { scrollLeft, scrollRight, handleScroll } from '../Components/scrollUtilis';
+import { scrollLeft, scrollRight, handleScroll } from '../Components/Home/scrollUtilis';
 import { getCars } from '../Redux/carsSlice';
-import CarModel from '../Components/CarModel.js';
+import CarModel from '../Components/Home/CarModel.js';
 
 const Cars = () => {
   const { cars, error, isLoading } = useSelector((state) => state.cars);

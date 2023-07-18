@@ -178,6 +178,10 @@ body {
     height: auto;
   }
 
+  .line {
+    width: 20%;
+  }
+
   .btn {
     margin-bottom: 9rem;
   }
@@ -233,6 +237,10 @@ body {
     width: 80%;
     height: auto;
     border-radius: 20px;
+  }
+
+  .line {
+    width: 25%;
   }
 
   .dashed-line {

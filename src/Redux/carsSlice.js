@@ -4,7 +4,7 @@ import axios from 'axios';
 const initialState = {
   cars: [],
   error: null,
-  isLoading: true,
+  isLoading: false,
 };
 
 const url = 'http://127.0.0.1:3001/api/v1/cars';
