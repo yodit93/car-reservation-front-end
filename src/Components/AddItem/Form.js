@@ -94,7 +94,7 @@ const Form = () => {
         placeholder="Description"
       />
       <div className="submit-btn">
-        <button type="submit" disabled={isdisabled}>Create</button>
+        <button type="submit" disabled={isdisabled}>CREATE</button>
       </div>
     </form>
   );
