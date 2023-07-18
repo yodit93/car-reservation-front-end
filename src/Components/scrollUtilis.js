@@ -1,5 +1,10 @@
 export const scrollLeft = (container) => {
-  const scrollAmount = container.offsetWidth / 2;
+  let scrollAmount;
+  if (window.innerWidth <= 768) {
+    scrollAmount = container.offsetWidth; // Adjust the scroll amount for mobile devices
+  } else {
+    scrollAmount = container.offsetWidth / 2; // Default scroll amount for desktop devices
+  }
   container.scrollTo({
     left: container.scrollLeft - scrollAmount,
     behavior: 'smooth',
@@ -7,7 +12,12 @@ export const scrollLeft = (container) => {
 };
 
 export const scrollRight = (container) => {
-  const scrollAmount = container.offsetWidth / 2;
+  let scrollAmount;
+  if (window.innerWidth <= 768) {
+    scrollAmount = container.offsetWidth; // Adjust the scroll amount for mobile devices
+  } else {
+    scrollAmount = container.offsetWidth / 2; // Default scroll amount for desktop devices
+  }
   container.scrollTo({
     left: container.scrollLeft + scrollAmount,
     behavior: 'smooth',

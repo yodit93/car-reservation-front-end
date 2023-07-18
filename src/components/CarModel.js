@@ -9,7 +9,7 @@ const CarModel = ({ car }) => (
     <h5 className="card-title">
       {car.name}
     </h5>
-    <p className="x">x x x x x x x x x x x x x x x x x x x x</p>
+    <div className="line" />
     <p className="card-text">{car.description}</p>
     <SocialIcons className="home-social-links" />
   </div>

@@ -37,6 +37,7 @@ const Cars = () => {
           <div className="header">
             <h1 className="header-title">LATEST MODELS</h1>
             <p className="header-subtitle">The most recent models of our cars</p>
+            <div className="dashed-line" />
           </div>
           <div className="wrap">
             <button
