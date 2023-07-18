@@ -7,7 +7,7 @@ const AddCar = () => (
   <div className="add-car-page">
     <NavigationPanel />
     <div id="add-car-container">
-      <h1>Add Car</h1>
+      <h1>ADD CAR</h1>
       <div className="add-car-overlay" />
       <Form />
       {' '}
