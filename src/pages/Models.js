@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/models.css';
 import { useDispatch, useSelector } from 'react-redux';
-import CarModel from '../Components/CarModel';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
 import { scrollLeft, scrollRight, handleScroll } from '../Components/scrollUtilis';
 import { getCars } from '../Redux/carsSlice';
+import CarModel from '../Components/CarModel';
 
 const Cars = () => {
   const { cars, error, isLoading } = useSelector((state) => state.cars);

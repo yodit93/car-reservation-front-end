@@ -24,13 +24,13 @@ body {
 }
 
 .header-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 900;
   margin-bottom: 0.5rem;
 }
 
 .header-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   color: #666;
 }
 
@@ -63,20 +63,20 @@ body {
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
 .x {
-  font-size: 0.3rem;
+  font-size: 0.2rem;
   margin-bottom: 1.5rem;
   color: #666;
 }
 
 .card-text {
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   color: #666;
 }
 
@@ -104,13 +104,13 @@ body {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 900px) {
   .home-container {
     display: flex;
   }
 
   .contr {
-    width: 80.45%;
+    width: 67.5%;
     margin: 0 auto;
     padding-top: 2rem;
     display: flex;
@@ -150,6 +150,100 @@ body {
 
   .btn {
     display: inline;
+    color: white;
+    background-color: rgb(150, 191, 1);
+    width: 2.5rem;
+    height: 2rem;
+    border: none;
+    margin-top: 4rem;
+    cursor: pointer;
+  }
+
+  .prev {
+    border-radius: 0 20px 20px 0;
+  }
+
+  .next {
+    border-radius: 20px 0 0 20px;
+  }
+
+  .prev.disabled {
+    background-color: #f0f0f0;
+  }
+
+  .next.disabled {
+    background-color: #f0f0f0;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .home-container {
+    display: flex;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+  
+  .header-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .contr {
+    width: 80.45%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .cars {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .card {
+    flex: 0 0 calc(50% - 1rem);
+    margin: 0 0.5rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .x {
+    font-size: 0.3rem;
+  }
+  
+  .card-text {
+    font-size: 0.8rem;
+  }
+
+  ::-webkit-scrollbar {
+    background-color: transparent;
+  }
+
+  .img-cont {
+    max-width: 100%;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .btn {
+    display: inline;
+    color: white;
     background-color: rgb(150, 191, 1);
     width: 4rem;
     height: 3rem;
