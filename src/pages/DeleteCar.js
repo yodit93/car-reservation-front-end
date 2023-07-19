@@ -19,6 +19,22 @@ const DeleteCar = () => {
  
 
   return (
+    <div>
+    <h2>Delete Car</h2>
+    <div>
+      {cars.map((car) => (
+        <div key={car.id}>
+          <div>
+            {car.name}
+          </div>
+          <div>
+            <img src={car.image} alt={car.name} />
+          </div>
+          <button type="button" onClick={() => handleDelete(car.id)}>Delete</button>
+        </div>
+      ))}
+    </div>
+  </div>
    
   );
 };
