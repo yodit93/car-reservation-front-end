@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const initialState = {
   users: [],
+  currentUser: null,
   error: null,
 };
 
@@ -13,6 +14,14 @@ export const getUsers = createAsyncThunk('users/getUsers', async (_, { rejectWit
     return response.data;
   } catch (err) {
     return rejectWithValue('Unable to fetch users');
+  }
+});
+export const getCurrentUser = createAsyncThunk('users/getCurrentUser', async (_, { rejectWithValue }) => {
+  try {
+    const response = await axios(`${url}/sign_in`);
+    return response.data;
+  } catch (err) {
+    return rejectWithValue('Unable to fetch user');
   }
 });
 export const createUser = createAsyncThunk('users/createUser', async (userData, { rejectWithValue }) => {
@@ -108,6 +117,14 @@ const usersSlice = createSlice({
       .addCase(deleteUser.rejected, (state, { payload }) => ({
         ...state,
         isLoading: false,
+        error: payload,
+      }))
+      .addCase(getCurrentUser.fulfilled, (state, { payload }) => ({
+        ...state,
+        currentUser: payload,
+      }))
+      .addCase(getCurrentUser.rejected, (state, { payload }) => ({
+        ...state,
         error: payload,
       }));
   },
