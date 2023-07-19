@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCars, deleteCar } from '../Redux/carsSlice';
+import '../Styles/deleteCar.css';
+import NavigationPanel from '../Components/Navigation/NavigationPanel';
 
 const DeleteCar = () => {
   const { cars } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch]);
@@ -16,26 +18,30 @@ const DeleteCar = () => {
       dispatch(deleteCar(carId));
     }
   };
- 
 
   return (
-    <div>
-    <h2>Delete Car</h2>
-    <div>
-      {cars.map((car) => (
-        <div key={car.id}>
-          <div>
-            {car.name}
-          </div>
-          <div>
-            <img src={car.image} alt={car.name} />
-          </div>
-          <button type="button" onClick={() => handleDelete(car.id)}>Delete</button>
+    <div className="main_container">
+      <NavigationPanel />
+      <div className="delete_car_container">
+        <h2 className="delete_car_header">Delete Car</h2>
+        <div className="card_container">
+          {cars.map((car) => (
+            <div key={car.id} className="card">
+              <div className="card_img">
+                <img src={car.image} alt={car.name} />
+              </div>
+              <div className="card_title">
+                {car.name}
+              </div>
+              <div className="card_description">
+                {car.description}
+              </div>
+              <button className="delete_button" type="button" onClick={() => handleDelete(car.id)}>Delete</button>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
-  </div>
-   
   );
 };
 
