@@ -23,22 +23,22 @@ const DeleteCar = () => {
     <div className="main_container">
       <NavigationPanel />
       <div className="delete_car_container">
-        <h2 className="delete_car_header">Delete Car</h2>
         <div className="card_container">
-          {cars.map((car) => (
-            <div key={car.id} className="card">
-              <div className="card_img">
-                <img src={car.image} alt={car.name} />
+          {cars
+            && cars.map((car) => (
+              <div key={car.id} className="card">
+                <div className="card_img">
+                  <img src={car.image} alt={car.name} />
+                </div>
+                <div className="card_title">
+                  {car.name}
+                </div>
+                <div className="card_description">
+                  {car.description}
+                </div>
+                <button className="delete_button" type="button" onClick={() => handleDelete(car.id)}>Delete</button>
               </div>
-              <div className="card_title">
-                {car.name}
-              </div>
-              <div className="card_description">
-                {car.description}
-              </div>
-              <button className="delete_button" type="button" onClick={() => handleDelete(car.id)}>Delete</button>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>

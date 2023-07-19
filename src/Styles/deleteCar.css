@@ -7,15 +7,11 @@
   .delete_car_container {
     text-align: center;
     margin-top: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
-  .delete_car_header {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
+  
   .card_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -32,6 +28,7 @@
       -23px 0 20px -23px rgba(0, 0, 0, 0.8),
       23px 0 20px -23px rgba(0, 0, 0, 0.8),
       inset 0 0 40px rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgb(135, 172, 0); 
   }
 
   .card_img img {
@@ -49,6 +46,7 @@
   .card_description {
     margin-top: 10px;
     color: #555;
+    margin-bottom: 10px;
   }
 
   .delete_button {
@@ -63,7 +61,16 @@
   }
 
   .delete_button:hover {
-    background-color: #d32f2f;
+    background-color: #fd0000;
+    box-shadow: 0 4px  4px  rgba(0, 0, 0, .1),
+    0 1px  6px  rgba(0, 0, 0, .05),
+    0 8px  8px  rgba(0, 0, 0, .1), 
+    0 16px 16px rgba(0, 0, 0, .1), 
+    8px 32px 32px rgba(0, 0, 0, .15), 
+    8px 64px 64px rgba(0, 0, 0, .15); 
+
+    transform: scale(1.05)
+    translateY(-0.5rem);
   }
 }
 
@@ -93,14 +100,17 @@
   }
 
   .card {
+    width: 80%;
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 8px;
     box-shadow:
-      0 1px 4px rgba(0, 0, 0, 0.3),
-      -23px 0 20px -23px rgba(0, 0, 0, 0.8),
-      23px 0 20px -23px rgba(0, 0, 0, 0.8),
-      inset 0 0 40px rgba(0, 0, 0, 0.1);
+    0 1px 4px rgba(0, 0, 0, 0.3),
+    -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    inset 0 0 40px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgb(135, 172, 0); 
+     
   }
 
   .card_img img {
@@ -118,6 +128,7 @@
   .card_description {
     margin-top: 10px;
     color: #555;
+    margin-bottom: 10px;
   }
 
   .delete_button {
@@ -129,9 +140,19 @@
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
+    margin-bottom: 5px;
   }
 
   .delete_button:hover {
-    background-color: #d32f2f;
+    background-color: #fd0000;
+    box-shadow: 0 4px  4px  rgba(0, 0, 0, .1),
+    0 1px  6px  rgba(0, 0, 0, .05),
+    0 8px  8px  rgba(0, 0, 0, .1), 
+    0 16px 16px rgba(0, 0, 0, .1), 
+    8px 32px 32px rgba(0, 0, 0, .15), 
+    8px 64px 64px rgba(0, 0, 0, .15); 
+
+    transform: scale(1.05)
+    translateY(-0.5rem);
   }
 }
