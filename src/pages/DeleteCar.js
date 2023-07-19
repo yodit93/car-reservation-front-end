@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCars, deleteCar } from '../Redux/carsSlice';
 
-const DeleteCar = () => (
-  <div>Delete Car page</div>
-);
+const DeleteCar = () => {
+  const { cars } = useSelector((state) => state.cars);
+  const dispatch = useDispatch();
+
+
+
+ 
+
+  return (
+   
+  );
+};
 
 export default DeleteCar;
