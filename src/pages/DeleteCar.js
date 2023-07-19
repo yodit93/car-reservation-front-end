@@ -5,7 +5,10 @@ import { getCars, deleteCar } from '../Redux/carsSlice';
 const DeleteCar = () => {
   const { cars } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
-
+ 
+  useEffect(() => {
+    dispatch(getCars());
+  }, [dispatch]);
 
 
  
