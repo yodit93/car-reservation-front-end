@@ -10,7 +10,12 @@ const DeleteCar = () => {
     dispatch(getCars());
   }, [dispatch]);
 
-
+  const handleDelete = (carId) => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this car?');
+    if (confirmDelete) {
+      dispatch(deleteCar(carId));
+    }
+  };
  
 
   return (
