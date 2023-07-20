@@ -12,7 +12,7 @@ const DeleteCar = () => {
     dispatch(getCars());
   }, [dispatch]);
 
-  const handleDelete = (carId) => {
+  const handleDeleteCar = (carId) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this car?');
     if (confirmDelete) {
       dispatch(deleteCar(carId));
@@ -36,7 +36,7 @@ const DeleteCar = () => {
                 <div className="card_description">
                   {car.description}
                 </div>
-                <button className="delete_button" type="button" onClick={() => handleDelete(car.id)}>Delete</button>
+                <button className="delete_button" type="button" onClick={() => handleDeleteCar(car.id)}>Delete</button>
               </div>
             ))}
         </div>

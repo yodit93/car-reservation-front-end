@@ -11,7 +11,6 @@
     padding-right: 60px;
   }
 
-
   .card_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -29,6 +28,7 @@
       23px 0 20px -23px rgba(0, 0, 0, 0.8),
       inset 0 0 40px rgba(0, 0, 0, 0.1);
     border-top: 1px solid rgb(135, 172, 0);
+    border-bottom: 1px solid rgb(135, 172, 0);
   }
 
   .card_img img {
@@ -111,6 +111,7 @@
       23px 0 20px -23px rgba(0, 0, 0, 0.8),
       inset 0 0 40px rgba(0, 0, 0, 0.1);
     border-top: 1px solid rgb(135, 172, 0);
+    border-bottom: 1px solid rgb(135, 172, 0);
   }
 
   .card_img img {
