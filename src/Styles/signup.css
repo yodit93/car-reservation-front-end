@@ -10,16 +10,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/142515/elevate-exterior-left-front-three-quarter-4.jpeg?isig=0&q=75');
 }
 
 .signup-cont, .login-cont {
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 2px 2px 7px #4b4a4a;
+    padding-bottom: 1rem;
+    border-radius: 4px;
   }
 
   .signup-header, .login-header {
@@ -31,10 +32,12 @@
   }
 
   #logo {
-    width: 40%;
+    width: 56%;
+    height: 3rem;
   }
   
 .signup-cont h1, .login-cont h1 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: rgb(28, 214, 28);
 }
@@ -45,10 +48,11 @@
     gap: 1rem;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 input {
-    width: 15rem;
+    width: 80%;
     height: 2.5rem;
     border: 1px solid #000;
     border-radius: 10px;
@@ -56,17 +60,37 @@ input {
     font-size: 1.2rem;
 }
 
-button {
+.signup-btn, .login-btn {
     padding: 0.7rem 1.5rem;
     background-color: rgb(28, 214, 28);
     color: white;
     border: none;
     border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+.footer {
+    margin: 1rem;
+    color: blue;
+    font-weight: 500;
 }
 
 @media screen and (min-width: 768px) {
+    .signup-cont, .login-cont {
+        width: 35%;
+    }
+
+    #logo {
+        height: 5rem;
+    }
+
     input {
-        width: 20rem;
         height: 3rem;
     }
 }

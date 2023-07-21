@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import AddCar from './pages/AddCar';
 import DeleteCar from './pages/DeleteCar';

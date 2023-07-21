@@ -42,8 +42,8 @@ const Navigation = () => {
           routeName="DELETE CAR"
         />
       </ul>
-      <div>
-        <button type="button" onClick={handleSignOut}>Sign out</button>
+      <div className="logout-cont">
+        <button type="button" className="logout" onClick={handleSignOut}>Log out</button>
       </div>
     </nav>
   );

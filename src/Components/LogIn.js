@@ -62,7 +62,7 @@ const LogIn = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit">Log In</button>
+          <button className="login-btn" type="submit">Log In</button>
         </form>
         <div className="footer">
           <span>Are you new?</span>

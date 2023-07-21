@@ -71,10 +71,10 @@ const SignUp = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit">Sign Up</button>
+          <button className="signup-btn" type="submit">Sign Up</button>
         </form>
         <div className="footer">
-          <span>Are you a member already?</span>
+          <span>Are you a member?</span>
           <Link to="/login">Log In</Link>
         </div>
       </div>
