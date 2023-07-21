@@ -1,15 +1,15 @@
 /* details.css */
 @media screen and (min-width: 900px) {
-  .table-cont{
+  .table-cont {
     border: 1px solid black;
   }
 
-    .carimage {
-     height: 100vh;
-     width: 100%;
-    }
+  .carimage {
+    height: 100vh;
+    width: 100%;
+  }
 
-    /* styles for the details page container */
+  /* styles for the details page container */
   .details-page {
     display: flex;
     height: 100vh;
@@ -29,6 +29,7 @@
     border: 4.5px solid;
     background: rgb(240, 237, 237);
   }
+
   /* styles for the table data cells (td) */
   .table-container td {
     padding: 10px;
@@ -39,7 +40,8 @@
     display: inline-block;
     min-width: 120px;
   }
-  .details-content-container{
+
+  .details-content-container {
     display: flex;
   }
 }
@@ -48,9 +50,9 @@
   .carimage {
     height: auto;
     width: 100%;
-   }
+  }
 
-   .table-container {
+  .table-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -63,22 +65,24 @@
     border: 4.5px solid;
     background: rgb(240, 237, 237);
   }
+
   /* styles for the table data cells (td) */
   .table-container td {
     padding: 10px;
   }
-  .details-content-container{
+
+  .details-content-container {
     display: flex;
     flex-direction: column;
   }
+
   header .mobile-nav-container {
     display: flex;
     position: fixed;
-}
-.table-cont{
-  border: 1px solid black;
-  padding: 1%;
-}
-}
+  }
 
-
+  .table-cont {
+    border: 1px solid black;
+    padding: 1%;
+  }
+}
