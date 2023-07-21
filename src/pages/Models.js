@@ -1,4 +1,6 @@
+import NavigationPanel from '../Components/Navigation/NavigationPanel';
+
 const Models = () => (
-  <div>Username</div>
+  <NavigationPanel />
 );
 export default Models;

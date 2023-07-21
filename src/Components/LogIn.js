@@ -2,18 +2,16 @@ import { useState, useEffect } from 'react';
 import '../Styles/signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { loginUser } from '../Redux/userSlice';
 import appLogo from './Navigation/logo.png';
 
-const LogIn = ({ authenticateUser }) => {
+const LogIn = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
   });
   const { currentUser, error } = useSelector((state) => state.users);
   const [isUserExist, setIsUserExist] = useState(false);
-  console.log(currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -31,7 +29,6 @@ const LogIn = ({ authenticateUser }) => {
   };
   useEffect(() => {
     if (currentUser !== null) {
-      authenticateUser(true);
       navigate('/');
     }
   }, [currentUser]);
@@ -75,7 +72,5 @@ const LogIn = ({ authenticateUser }) => {
     </div>
   );
 };
-LogIn.propTypes = {
-  authenticateUser: PropTypes.func.isRequired,
-};
+
 export default LogIn;

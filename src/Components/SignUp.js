@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import '../Styles/signup.css';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
 import { createUser } from '../Redux/userSlice';
 import appLogo from './Navigation/logo.png';
 
-const SignUp = ({ authenticateUser }) => {
+const SignUp = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -31,8 +30,6 @@ const SignUp = ({ authenticateUser }) => {
   };
   useEffect(() => {
     if (currentUser !== null) {
-      authenticateUser(true);
-      localStorage.setItem('authenticated', true);
       navigate('/');
     }
   }, [currentUser]);
@@ -84,10 +81,6 @@ const SignUp = ({ authenticateUser }) => {
     </div>
 
   );
-};
-
-SignUp.propTypes = {
-  authenticateUser: PropTypes.func.isRequired,
 };
 
 export default SignUp;

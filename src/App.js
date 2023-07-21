@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import AddCar from './pages/AddCar';
 import DeleteCar from './pages/DeleteCar';
 import Models from './pages/Models';
@@ -10,22 +11,19 @@ import LogIn from './Components/LogIn';
 import PrivateRoutes from './utils/PrivateRoutes';
 
 function App() {
-  const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem('authenticated')) ?? false);
-  useEffect(() => {
-    localStorage.setItem('authenticated', JSON.stringify(isAuth));
-  }, [isAuth]);
+  const { isAuthenticated } = useSelector((state) => state.users);
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<PrivateRoutes authenticateUser={isAuth} />}>
+        <Route element={<PrivateRoutes authenticateUser={isAuthenticated} />}>
           <Route path="/" element={<Models />} />
           <Route path="/bookride" element={<ReserveCar />} />
           <Route path="/additem" element={<AddCar />} />
           <Route path="/deleteitem" element={<DeleteCar />} />
           <Route path="/myreservations" element={<MyReservations />} />
         </Route>
-        <Route path="/signup" element={<SignUp authenticateUser={setIsAuth} />} />
-        <Route path="/login" element={<LogIn authenticateUser={setIsAuth} />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
       </Routes>
     </BrowserRouter>
   );
