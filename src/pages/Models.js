@@ -1,6 +1,4 @@
-import React from 'react';
-
 const Models = () => (
-  <div>Models</div>
+  <div>Username</div>
 );
 export default Models;

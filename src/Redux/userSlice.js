@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const initialState = {
   users: [],
-  currentUser: null,
+  currentUser: JSON.parse(localStorage.getItem('currentUser')) ?? null,
   error: null,
 };
 
@@ -16,17 +16,10 @@ export const getUsers = createAsyncThunk('users/getUsers', async (_, { rejectWit
     return rejectWithValue('Unable to fetch users');
   }
 });
-export const getCurrentUser = createAsyncThunk('users/getCurrentUser', async (_, { rejectWithValue }) => {
-  try {
-    const response = await axios(`${url}/sign_in`);
-    return response.data;
-  } catch (err) {
-    return rejectWithValue('Unable to fetch user');
-  }
-});
 export const createUser = createAsyncThunk('users/createUser', async (userData, { rejectWithValue }) => {
   try {
     const response = await axios.post(url, userData);
+    localStorage.setItem('currentUser', JSON.stringify(response.data));
     return response.data;
   } catch (err) {
     return rejectWithValue('Unable to create user');
@@ -48,6 +41,20 @@ export const deleteUser = createAsyncThunk('users/deleteUser', async (userId, { 
     return rejectWithValue('Unable to delete user');
   }
 });
+export const loginUser = createAsyncThunk(
+  'users/loginUser',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('http://127.0.0.1:3001/users/sign_in', userData, {
+        withCredentials: true,
+      });
+      localStorage.setItem('currentUser', JSON.stringify(response.data));
+      return response.data;
+    } catch (err) {
+      return rejectWithValue('Unable to log in the user');
+    }
+  },
+);
 
 const usersSlice = createSlice({
   name: 'users',
@@ -75,6 +82,7 @@ const usersSlice = createSlice({
       .addCase(createUser.fulfilled, (state, { payload }) => ({
         ...state,
         users: [...state.users, payload], // Add the created user to the existing list
+        currentUser: payload,
         isLoading: false,
       }))
       .addCase(createUser.rejected, (state, { payload }) => ({
@@ -119,11 +127,11 @@ const usersSlice = createSlice({
         isLoading: false,
         error: payload,
       }))
-      .addCase(getCurrentUser.fulfilled, (state, { payload }) => ({
+      .addCase(loginUser.fulfilled, (state, { payload }) => ({
         ...state,
         currentUser: payload,
       }))
-      .addCase(getCurrentUser.rejected, (state, { payload }) => ({
+      .addCase(loginUser.rejected, (state, { payload }) => ({
         ...state,
         error: payload,
       }));
