@@ -4,6 +4,7 @@ import DeleteCar from './pages/DeleteCar';
 import Models from './pages/Models';
 import MyReservations from './pages/MyReservations';
 import ReserveCar from './pages/ReserveCar';
+import DetailsPage from './pages/DetailsPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/additem" element={<AddCar />} />
         <Route path="/deleteitem" element={<DeleteCar />} />
         <Route path="/myreservations" element={<MyReservations />} />
+        <Route path="/cars/:id" element={<DetailsPage />} />
       </Routes>
     </BrowserRouter>
   );

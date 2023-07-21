@@ -1,0 +1,84 @@
+/* details.css */
+@media screen and (min-width: 900px) {
+  .table-cont{
+    border: 1px solid black;
+  }
+
+    .carimage {
+     height: 100vh;
+     width: 100%;
+    }
+
+    /* styles for the details page container */
+  .details-page {
+    display: flex;
+    height: 100vh;
+    justify-content: space-between;
+  }
+
+  /* styles for the table container */
+  .table-container {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+  }
+
+  /* styles for the table rows */
+  .table-container tr {
+    border-bottom: 1px solid #2c2828;
+    border: 4.5px solid;
+    background: rgb(240, 237, 237);
+  }
+  /* styles for the table data cells (td) */
+  .table-container td {
+    padding: 10px;
+  }
+
+  /* styles for the labels (strong) in the first column */
+  .table-container td strong {
+    display: inline-block;
+    min-width: 120px;
+  }
+  .details-content-container{
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 899px) {
+  .carimage {
+    height: auto;
+    width: 100%;
+   }
+
+   .table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+  }
+
+  /* styles for the table rows */
+  .table-container tr {
+    border-bottom: 1px solid #2c2828;
+    border: 4.5px solid;
+    background: rgb(240, 237, 237);
+  }
+  /* styles for the table data cells (td) */
+  .table-container td {
+    padding: 10px;
+  }
+  .details-content-container{
+    display: flex;
+    flex-direction: column;
+  }
+  header .mobile-nav-container {
+    display: flex;
+    position: fixed;
+}
+.table-cont{
+  border: 1px solid black;
+  padding: 1%;
+}
+}
+
+
