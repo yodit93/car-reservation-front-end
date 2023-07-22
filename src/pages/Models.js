@@ -1,6 +1,6 @@
-import React from 'react';
+import NavigationPanel from '../Components/Navigation/NavigationPanel';
 
 const Models = () => (
-  <div>Models</div>
+  <NavigationPanel />
 );
 export default Models;
