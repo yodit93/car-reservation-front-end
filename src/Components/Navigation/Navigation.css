@@ -118,7 +118,7 @@ footer p {
 .logout:hover,
 .logout:focus {
   border: none;
-  background-color: rgb(221, 22, 22);
+  background-color: rgba(241, 50, 50, 0.641);
   color: #fff;
   font-weight: bolder;
   transform: scale(0.9);
