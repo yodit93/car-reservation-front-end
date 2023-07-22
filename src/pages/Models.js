@@ -19,7 +19,7 @@ const Cars = () => {
   const nextBtnRef = useRef(null);
   useEffect(() => {
     dispatch(getCars());
-  }, [dispatch]);
+  }, []);
 
   const container = containerRef.current;
 
@@ -27,19 +27,18 @@ const Cars = () => {
     setIsPrevDisabled(isFirstVisible);
     setIsNextDisabled(isLastVisible);
   }, [isFirstVisible, isLastVisible]);
-
   return (
     <>
       <div className="home-container">
         <NavigationPanel />
         <div className="home">
           {isLoading && <div className="loading">Loading...</div>}
-          {!isLoading && cars.length === 0 && (
+          {cars && cars.length === 0 && !isLoading && (
             <div className="no-cars">
               No cars available. Please add a car by clicking the &quot;Add Car&quot; button.
             </div>
           )}
-          {!isLoading && cars.length > 0 && (
+          {cars && cars.length > 0 && (
           <div className="contr">
             <div className="header">
               <h1 className="header-title">LATEST MODELS</h1>

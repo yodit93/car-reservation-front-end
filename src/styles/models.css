@@ -157,7 +157,7 @@ body {
 .home .loading {
   font-size: 2rem;
   color: #333;
-  margin-bottom: 20em;
+  margin-bottom: 20rem;
 }
 
 .home .no-cars {
@@ -174,7 +174,7 @@ body {
 
   .contr .header {
     gap: 0;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
   }
 
   .header-title {
