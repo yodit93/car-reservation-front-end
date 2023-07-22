@@ -34,9 +34,9 @@ export const loginUser = createAsyncThunk(
       const response = await axios.post('http://127.0.0.1:3001/users/sign_in', userData, {
         withCredentials: true,
       });
-      localStorage.setItem('currentUser', JSON.stringify(response.data));
+      localStorage.setItem('currentUser', JSON.stringify(response.data.user));
       localStorage.setItem('isAuthenticated', true);
-      return response.data;
+      return response.data.user;
     } catch (err) {
       return rejectWithValue('Unable to log in the user');
     }
