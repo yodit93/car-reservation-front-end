@@ -34,40 +34,42 @@ const Cars = () => {
       {cars && (
       <div className="home-container">
         <NavigationPanel />
-        <div className="contr">
-          <div className="header">
-            <h1 className="header-title">LATEST MODELS</h1>
-            <p className="header-subtitle">The most recent models of our cars</p>
-            <div className="dashed-line" />
-          </div>
-          <div className="wrap">
-            <button
-              type="button"
-              className={`prev btn ${isPrevDisabled ? 'disabled' : ''}`}
-              onClick={() => scrollLeft(container)}
-              disabled={isPrevDisabled}
-              ref={prevBtnRef}
-            >
-              <BiLeftArrow />
-            </button>
-            <div
-              className="cars"
-              ref={containerRef}
-              onScroll={() => handleScroll(container, setIsFirstVisible, setIsLastVisible)}
-            >
-              {cars.map((car) => (
-                <CarModel car={car} key={car.id} />
-              ))}
+        <div className="home">
+          <div className="contr">
+            <div className="header">
+              <h1 className="header-title">LATEST MODELS</h1>
+              <p className="header-subtitle">The most recent models of our cars</p>
+              <div className="dashed-line" />
             </div>
-            <button
-              type="button"
-              className={`next btn ${isNextDisabled ? 'disabled' : ''}`}
-              onClick={() => scrollRight(container)}
-              disabled={isNextDisabled}
-              ref={nextBtnRef}
-            >
-              <BiRightArrow />
-            </button>
+            <div className="wrap">
+              <button
+                type="button"
+                className={`prev btn ${isPrevDisabled ? 'disabled' : ''}`}
+                onClick={() => scrollLeft(container)}
+                disabled={isPrevDisabled}
+                ref={prevBtnRef}
+              >
+                <BiLeftArrow />
+              </button>
+              <div
+                className="cars"
+                ref={containerRef}
+                onScroll={() => handleScroll(container, setIsFirstVisible, setIsLastVisible)}
+              >
+                {cars.map((car) => (
+                  <CarModel car={car} key={car.id} />
+                ))}
+              </div>
+              <button
+                type="button"
+                className={`next btn ${isNextDisabled ? 'disabled' : ''}`}
+                onClick={() => scrollRight(container)}
+                disabled={isNextDisabled}
+                ref={nextBtnRef}
+              >
+                <BiRightArrow />
+              </button>
+            </div>
           </div>
         </div>
       </div>
