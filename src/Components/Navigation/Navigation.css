@@ -101,6 +101,29 @@ footer p {
   display: none;
 }
 
+.logout {
+  width: fit-content;
+  padding: 10px 40px;
+  outline: none;
+  border: 1px solid rgb(150, 191, 1);
+  background-color: inherit;
+  font-family: 'Lugrasimo', cursive;
+  transition: all 0.3s ease;
+  margin-left: 15%;
+  position: absolute;
+  bottom: -30%;
+  cursor: pointer;
+}
+
+.logout:hover,
+.logout:focus {
+  border: none;
+  background-color: rgb(221, 22, 22);
+  color: #fff;
+  font-weight: bolder;
+  transform: scale(0.9);
+}
+
 @media (max-width: 765px) {
   header {
     display: block;
@@ -118,6 +141,7 @@ footer p {
     height: 60px;
     background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
     border-bottom: 1px solid #bebebe68;
+    background-color: #fff;
   }
 
   header .mobile-nav-container .logo {
@@ -179,11 +203,11 @@ footer p {
   nav {
     position: relative;
     bottom: 0;
-    top: 85px;
+    top: 52px;
   }
 
   nav ul {
-    gap: 10px;
+    gap: 6px;
     margin-left: 5px;
   }
 
@@ -218,9 +242,19 @@ footer p {
     background-color: rgba(0, 0, 0, 0.5);
     left: -100%;
     cursor: pointer;
+    z-index: 8;
   }
 
   .active {
     left: 0;
+  }
+
+  .logout-cont {
+    margin: 60px 0 0 18px;
+  }
+
+  .logout {
+    border: 2px solid #fff;
+    margin-left: 3%;
   }
 }
