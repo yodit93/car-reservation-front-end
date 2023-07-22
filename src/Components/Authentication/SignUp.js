@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
-import '../Styles/signup.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import '../../Styles/signup.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearError, loginUser } from '../Redux/userSlice';
-import appLogo from './Navigation/logo.png';
+import { Link, useNavigate } from 'react-router-dom';
+import { clearError, createUser } from '../../Redux/userSlice';
+import appLogo from '../Navigation/logo.png';
 
-const LogIn = () => {
+const SignUp = () => {
   const [formData, setFormData] = useState({
     username: '',
+    email: '',
     password: '',
   });
   const { currentUser, error } = useSelector((state) => state.users);
@@ -18,17 +19,17 @@ const LogIn = () => {
   const handleError = () => (dispatch(clearError()));
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
+    setFormData({
+      ...formData,
       [id]: value,
-    }));
+    });
     setIsUserExist(false);
     handleError();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser({ user: formData }));
+    dispatch(createUser({ user: formData }));
   };
   useEffect(() => {
     if (currentUser !== null) {
@@ -42,20 +43,28 @@ const LogIn = () => {
   }, [error]);
   return (
     <div className="outer-cont">
-      <div className="login-cont">
-        <div className="login-header">
+      <div className="signup-cont">
+        <div className="signup-header">
           <div className="logo-container">
             <img id="logo" src={appLogo} alt="app logo" />
           </div>
-          <h1>Log In</h1>
+          <h1>Register</h1>
         </div>
-        {isUserExist && <p className="error-message">Invalid username or password</p>}
-        <form className="login-form" onSubmit={handleSubmit}>
+        {isUserExist && <p className="error-message">User Already Exist!</p>}
+        <form className="signup-form" onSubmit={handleSubmit}>
           <input
             type="text"
             id="username"
             placeholder="Username"
             value={formData.username}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            value={formData.email}
             onChange={handleChange}
             required
           />
@@ -67,15 +76,16 @@ const LogIn = () => {
             onChange={handleChange}
             required
           />
-          <button className="login-btn" type="submit">LOGIN</button>
+          <button className="signup-btn" type="submit">SIGN UP</button>
         </form>
         <div className="footer">
-          <span>Don&apos;t have an account?</span>
-          <Link to="/signup" onClick={handleError}>SIGN UP</Link>
+          <span>Alredy have an account?</span>
+          <Link to="/login" onClick={handleError}>LOGIN</Link>
         </div>
       </div>
     </div>
+
   );
 };
 
-export default LogIn;
+export default SignUp;

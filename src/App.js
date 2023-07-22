@@ -5,8 +5,8 @@ import DeleteCar from './pages/DeleteCar';
 import Models from './pages/Models';
 import MyReservations from './pages/MyReservations';
 import ReserveCar from './pages/ReserveCar';
-import SignUp from './Components/SignUp';
-import LogIn from './Components/LogIn';
+import SignUp from './Components/Authentication/SignUp';
+import LogIn from './Components/Authentication/LogIn';
 import PrivateRoutes from './utils/PrivateRoutes';
 
 function App() {
