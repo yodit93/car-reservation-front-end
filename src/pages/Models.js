@@ -30,11 +30,16 @@ const Cars = () => {
 
   return (
     <>
-      {isLoading && <div className="loading">Loading...</div>}
-      {cars && (
       <div className="home-container">
         <NavigationPanel />
         <div className="home">
+          {isLoading && <div className="loading">Loading...</div>}
+          {!isLoading && cars.length === 0 && (
+            <div className="no-cars">
+              No cars available. Please add a car by clicking the &quot;Add Car&quot; button.
+            </div>
+          )}
+          {!isLoading && cars.length > 0 && (
           <div className="contr">
             <div className="header">
               <h1 className="header-title">LATEST MODELS</h1>
@@ -71,9 +76,10 @@ const Cars = () => {
               </button>
             </div>
           </div>
+          )}
         </div>
+
       </div>
-      )}
       {error && <div className="error">{error}</div>}
     </>
   );
