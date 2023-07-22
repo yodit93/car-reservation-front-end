@@ -1,9 +1,16 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import NavLink from './NavLink';
+import { signOutUser } from '../../Redux/userSlice';
 
 const Navigation = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  const handleSignOut = () => {
+    dispatch(signOutUser());
+  };
 
   const isActiveRoute = (route) => location.pathname === route;
   return (
@@ -35,6 +42,9 @@ const Navigation = () => {
           routeName="DELETE CAR"
         />
       </ul>
+      <div className="logout-cont">
+        <button type="button" className="logout" onClick={handleSignOut}>Log out</button>
+      </div>
     </nav>
   );
 };

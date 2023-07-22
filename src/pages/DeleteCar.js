@@ -1,7 +1,7 @@
-import React from 'react';
+import NavigationPanel from '../Components/Navigation/NavigationPanel';
 
 const DeleteCar = () => (
-  <div>Delete Car page</div>
+  <NavigationPanel />
 );
 
 export default DeleteCar;
