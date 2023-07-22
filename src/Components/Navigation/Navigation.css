@@ -109,7 +109,7 @@ footer p {
   background-color: inherit;
   font-family: 'Lugrasimo', cursive;
   transition: all 0.3s ease;
-  margin-left: 15%;
+  margin-left: 10%;
   position: absolute;
   bottom: -30%;
   cursor: pointer;
@@ -118,10 +118,17 @@ footer p {
 .logout:hover,
 .logout:focus {
   border: none;
-  background-color: rgb(221, 22, 22);
+  background-color: rgba(241, 50, 50, 0.641);
   color: #fff;
   font-weight: bolder;
   transform: scale(0.9);
+}
+
+.logout-icon {
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  top: 3px;
 }
 
 @media (max-width: 765px) {
@@ -254,7 +261,18 @@ footer p {
   }
 
   .logout {
-    border: 2px solid #fff;
-    margin-left: 3%;
+    border: 2px solid #d0d0d0;
+    margin-left: 1%;
+    padding: 10px 30px;
+  }
+
+  .logout-icon {
+    margin-left: 10px;
+    color: red;
+  }
+
+  .logout:hover .logout-icon,
+  .logout:focus .logout-icon {
+    color: #fff;
   }
 }
