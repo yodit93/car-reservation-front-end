@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Input from './Input';
 import { createCar } from '../../Redux/carsSlice';
 
 const Form = () => {
+  const { currentUser } = useSelector((state) => state.users);
   const [isdisabled, setIsDisabled] = useState(true);
   const [formdata, setFormData] = useState({
     name: '',
@@ -12,7 +13,7 @@ const Form = () => {
     description: '',
     price: '',
     model: '',
-    user_id: 1,
+    user_id: currentUser.id,
   });
 
   const navigate = useNavigate();
