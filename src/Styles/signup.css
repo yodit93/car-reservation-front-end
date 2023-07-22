@@ -1,47 +1,49 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .outer-cont {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(254, 255, 255);
 }
 
 .signup-cont,
 .login-cont {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 7px #4b4a4a;
-  padding-bottom: 1rem;
-  border-radius: 4px;
+  box-shadow: 5px 5px 12px #4b4a4a;
+  padding: 1rem 0;
+  border-top: 20px solid  rgb(28, 214, 28);
+  border-radius: 50px 0;
+  background-color: #fff;
 }
 
 .signup-header,
 .login-header {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  position: relative;
+}
+
+.logo-container {
+  width: 60%;
 }
 
 #logo {
-  width: 56%;
-  height: 3rem;
+  width: 100%;
+  height: 100%;
 }
 
 .signup-cont h1,
 .login-cont h1 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin: 0 10px 1rem 0;
   color: rgb(28, 214, 28);
 }
 
@@ -55,13 +57,34 @@
   width: 100%;
 }
 
-input {
-  width: 80%;
+.error-message {
+  text-align: center;
+  color: rgba(219, 35, 35, 0.814);
+  font-size: 18px;
+  margin: 10px;
+  font-weight: bolder;
+}
+
+.signup-form input,
+.login-form input {
+  width: 90%;
   height: 2.5rem;
   border: 1px solid #000;
   border-radius: 10px;
   padding: 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.signup-form input::placeholder,
+.login-form input::placeholder {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.signup-form input:focus,
+.login-form input:focus {
+  border-color: rgb(28, 214, 28);
 }
 
 .signup-btn,
@@ -73,30 +96,43 @@ input {
   border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
+  font-weight: bolder;
+  transition: all 0.3s ease;
 }
 
-a {
-  text-decoration: none;
-  margin-left: 0.5rem;
+.signup-btn:hover,
+.login-btn:hover {
+  background-color: rgb(26, 189, 26);
 }
 
 .footer {
-  margin: 1rem;
-  color: blue;
-  font-weight: 500;
+  margin: 1rem 0;
 }
 
-@media screen and (min-width: 768px) {
+.footer span {
+  font-size: 18px;
+}
+
+.footer a {
+  text-decoration: none;
+  margin-left: 0.5rem;
+  color: rgba(25, 125, 240, 0.833);
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
   .signup-cont,
   .login-cont {
-    width: 35%;
+    width: 600px;
   }
 
-  #logo {
-    height: 5rem;
-  }
-
-  input {
-    height: 3rem;
+  .signup-cont h1,
+  .login-cont h1 {
+    font-size: 2rem;
   }
 }

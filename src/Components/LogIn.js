@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import '../Styles/signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../Redux/userSlice';
+import { clearError, loginUser } from '../Redux/userSlice';
 import appLogo from './Navigation/logo.png';
 
 const LogIn = () => {
@@ -14,6 +14,8 @@ const LogIn = () => {
   const [isUserExist, setIsUserExist] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleError = () => (dispatch(clearError()));
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevFormData) => ({
@@ -21,6 +23,7 @@ const LogIn = () => {
       [id]: value,
     }));
     setIsUserExist(false);
+    handleError();
   };
 
   const handleSubmit = (e) => {
@@ -41,10 +44,12 @@ const LogIn = () => {
     <div className="outer-cont">
       <div className="login-cont">
         <div className="login-header">
-          <img id="logo" src={appLogo} alt="app logo" />
+          <div className="logo-container">
+            <img id="logo" src={appLogo} alt="app logo" />
+          </div>
           <h1>Log In</h1>
         </div>
-        {isUserExist && <p>No user maches this information</p>}
+        {isUserExist && <p className="error-message">Invalid username or password</p>}
         <form className="login-form" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -62,11 +67,11 @@ const LogIn = () => {
             onChange={handleChange}
             required
           />
-          <button className="login-btn" type="submit">Log In</button>
+          <button className="login-btn" type="submit">LOGIN</button>
         </form>
         <div className="footer">
-          <span>Are you new?</span>
-          <Link to="/signup">Sign Up</Link>
+          <span>Don&apos;t have an account?</span>
+          <Link to="/signup" onClick={handleError}>SIGN UP</Link>
         </div>
       </div>
     </div>

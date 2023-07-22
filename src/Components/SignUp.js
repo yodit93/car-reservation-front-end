@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import '../Styles/signup.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { createUser } from '../Redux/userSlice';
+import { clearError, createUser } from '../Redux/userSlice';
 import appLogo from './Navigation/logo.png';
 
 const SignUp = () => {
@@ -15,6 +15,8 @@ const SignUp = () => {
   const [isUserExist, setIsUserExist] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleError = () => (dispatch(clearError()));
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({
@@ -22,6 +24,7 @@ const SignUp = () => {
       [id]: value,
     });
     setIsUserExist(false);
+    handleError();
   };
 
   const handleSubmit = (e) => {
@@ -42,10 +45,12 @@ const SignUp = () => {
     <div className="outer-cont">
       <div className="signup-cont">
         <div className="signup-header">
-          <img id="logo" src={appLogo} alt="app logo" />
+          <div className="logo-container">
+            <img id="logo" src={appLogo} alt="app logo" />
+          </div>
           <h1>Register</h1>
         </div>
-        {isUserExist && <p>User is Already Exist!</p>}
+        {isUserExist && <p className="error-message">User Already Exist!</p>}
         <form className="signup-form" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -71,11 +76,11 @@ const SignUp = () => {
             onChange={handleChange}
             required
           />
-          <button className="signup-btn" type="submit">Sign Up</button>
+          <button className="signup-btn" type="submit">SIGN UP</button>
         </form>
         <div className="footer">
-          <span>Are you a member?</span>
-          <Link to="/login">Log In</Link>
+          <span>Alredy have an account?</span>
+          <Link to="/login" onClick={handleError}>LOGIN</Link>
         </div>
       </div>
     </div>
