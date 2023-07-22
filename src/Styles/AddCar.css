@@ -70,11 +70,8 @@
   font-weight: bold;
 }
 
-button[type="submit"] {
-  /* background-color: rgb(150, 191, 1); */
-  background: linear-gradient(to right, #fff, rgb(150, 191, 1));
-  color: #000;
-  /* color: #fff; */
+#add-car-container form button[type="submit"] {
+  background: linear-gradient(to right, #d4d4d4, rgb(111, 142, 0));
   font-weight: bolder;
   font-size: 25px;
   padding: 15px;
@@ -86,22 +83,20 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
+#add-car-container form button[type="submit"]:hover {
   box-shadow: 0 -7px  rgba(50, 50, 50, 0.9);
-  /* background-color: rgb(116, 149, 0); */
-  background: linear-gradient(to right, #d4d4d4, rgb(111, 142, 0));
-
+  background: linear-gradient(to right, #d4d4d4, rgb(90, 115, 2));
 }
 
 .submit-btn {
   margin-top: 20px;
 }
 
-button[type="submit"]:active {
+#add-car-container form button[type="submit"]:active {
   background-color: rgb(107, 137, 0);
 }
 
-button[type="submit"]:disabled {
+#add-car-container form button[type="submit"]:disabled {
   background: rgba(77, 77, 77, 0.8);
   color: #e7e7e792;
   opacity: 0.8 !important;
