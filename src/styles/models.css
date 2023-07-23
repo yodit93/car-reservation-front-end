@@ -71,6 +71,11 @@ body {
   margin: 0 0.5rem;
 }
 
+.card:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
 .img-cont {
   max-width: 100%;
   width: 100%;
