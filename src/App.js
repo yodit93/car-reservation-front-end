@@ -5,9 +5,10 @@ import DeleteCar from './pages/DeleteCar';
 import Models from './pages/Models';
 import MyReservations from './pages/MyReservations';
 import ReserveCar from './pages/ReserveCar';
-import SignUp from './Components/SignUp';
-import LogIn from './Components/LogIn';
+import SignUp from './Components/Authentication/SignUp';
+import LogIn from './Components/Authentication/LogIn';
 import PrivateRoutes from './utils/PrivateRoutes';
+import CarDetails from './pages/CarDetails';
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.users);
@@ -20,6 +21,7 @@ function App() {
           <Route path="/additem" element={<AddCar />} />
           <Route path="/deleteitem" element={<DeleteCar />} />
           <Route path="/myreservations" element={<MyReservations />} />
+          <Route path="/car/:id" element={<CarDetails />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />

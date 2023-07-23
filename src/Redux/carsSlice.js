@@ -4,7 +4,7 @@ import axios from 'axios';
 const initialState = {
   cars: [],
   error: null,
-  isLoading: false,
+  isLoading: true,
 };
 
 const url = 'http://127.0.0.1:3001/api/v1/cars';
@@ -46,10 +46,6 @@ const carsSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(getCars.pending, (state) => ({
-        ...state,
-        isLoading: true,
-      }))
       .addCase(getCars.fulfilled, (state, { payload }) => ({
         ...state,
         cars: payload,
@@ -60,10 +56,6 @@ const carsSlice = createSlice({
         isLoading: false,
         error: payload,
       }))
-      .addCase(createCar.pending, (state) => ({
-        ...state,
-        isLoading: true,
-      }))
       .addCase(createCar.fulfilled, (state, { payload }) => ({
         ...state,
         cars: [...state.cars, payload], // Add the created car to the existing list
@@ -73,10 +65,6 @@ const carsSlice = createSlice({
         ...state,
         isLoading: false,
         error: payload,
-      }))
-      .addCase(updateCar.pending, (state) => ({
-        ...state,
-        isLoading: true,
       }))
       .addCase(updateCar.fulfilled, (state, { payload }) => {
         const updatedCars = state.cars.map((car) => {
@@ -96,10 +84,6 @@ const carsSlice = createSlice({
         ...state,
         isLoading: false,
         error: payload,
-      }))
-      .addCase(deleteCar.pending, (state) => ({
-        ...state,
-        isLoading: true,
       }))
       .addCase(deleteCar.fulfilled, (state, { payload }) => ({
         ...state,
