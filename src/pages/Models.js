@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/models.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
 import { scrollLeft, scrollRight, handleScroll } from '../Components/Home/scrollUtilis';
 import { getCars } from '../Redux/carsSlice';
@@ -32,7 +33,7 @@ const Cars = () => {
       <div className="home-container">
         <NavigationPanel />
         <div className="home">
-          {isLoading && <div className="loading">Loading...</div>}
+          {isLoading && <div className="custom-loader" />}
           {cars && cars.length === 0 && !isLoading && (
             <div className="no-cars">
               No cars available. Please add a car by clicking the &quot;Add Car&quot; button.
@@ -61,7 +62,9 @@ const Cars = () => {
                 onScroll={() => handleScroll(container, setIsFirstVisible, setIsLastVisible)}
               >
                 {cars.map((car) => (
-                  <CarModel car={car} key={car.id} />
+                  <Link to="/cardetails" key={car.id} className="card">
+                    <CarModel car={car} />
+                  </Link>
                 ))}
               </div>
               <button
