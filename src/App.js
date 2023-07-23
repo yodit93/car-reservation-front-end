@@ -21,7 +21,7 @@ function App() {
           <Route path="/additem" element={<AddCar />} />
           <Route path="/deleteitem" element={<DeleteCar />} />
           <Route path="/myreservations" element={<MyReservations />} />
-          <Route path="/cardetails" element={<CarDetails />} />
+          <Route path="/car/:id" element={<CarDetails />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />

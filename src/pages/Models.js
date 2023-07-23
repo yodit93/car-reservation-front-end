@@ -62,7 +62,7 @@ const Cars = () => {
                 onScroll={() => handleScroll(container, setIsFirstVisible, setIsLastVisible)}
               >
                 {cars.map((car) => (
-                  <Link to="/cardetails" key={car.id} className="card">
+                  <Link to={`car/${car.id}`} key={car.id} className="card">
                     <CarModel car={car} />
                   </Link>
                 ))}
