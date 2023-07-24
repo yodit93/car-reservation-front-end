@@ -59,6 +59,10 @@
     height: 3rem;
   }
 
+  h2.card_detail {
+    justify-content: center;
+  }
+
   .delete_reservation {
     background-color: #ff5f5f;
     color: white;
@@ -66,6 +70,10 @@
     border-radius: 5px;
     padding: 8px 16px;
     cursor: pointer;
+  }
+
+  .delete_reservation:hover {
+    background-color: #fc5d5daa;
   }
 }
 
@@ -128,7 +136,7 @@
   }
 
   h2.card_detail {
-    text-align: center;
+    justify-content: center;
   }
 
   .delete_reservation {
@@ -141,6 +149,6 @@
   }
 
   .delete_reservation:hover {
-    background-color: #ff0606;
+    background-color: #fc5d5daa;
   }
 }
