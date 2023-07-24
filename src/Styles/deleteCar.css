@@ -4,21 +4,21 @@
     flex-direction: column;
   }
 
-  .delete_car_container {
+  #delete_car_container {
     text-align: center;
     margin-top: 20px;
     padding-left: 60px;
     padding-right: 60px;
   }
 
-  .card_container {
+  #delete_car_container .card_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-gap: 20px;
     margin-top: 20px;
   }
 
-  .card {
+  #delete_car_container .card {
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 8px;
@@ -31,25 +31,25 @@
     border-bottom: 1px solid rgb(135, 172, 0);
   }
 
-  .card_img img {
+  #delete_car_container .card_img img {
     width: 100%;
     height: auto;
     border-radius: 6px;
   }
 
-  .card_title {
+  #delete_car_container .card_title {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
   }
 
-  .card_description {
+  #delete_car_container .card_description {
     margin-top: 10px;
     color: #555;
     margin-bottom: 10px;
   }
 
-  .delete_button {
+  #delete_car_container .delete_button {
     margin-top: 10px;
     background-color: #f44336;
     color: #fff;
@@ -60,7 +60,7 @@
     cursor: pointer;
   }
 
-  .delete_button:hover {
+  #delete_car_container .delete_button:hover {
     background-color: #fd0000;
     box-shadow:
       0 4px  4px  rgba(0, 0, 0, 0.1),
@@ -75,32 +75,31 @@
   }
 }
 
-/* Media Queries */
 @media (min-width: 769px) {
   .main_container {
     display: flex;
   }
 
-  .delete_car_container {
+  #delete_car_container .delete_car_container {
     text-align: center;
     margin-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
   }
 
-  .delete_car_header {
+  #delete_car_container .delete_car_header {
     font-size: 24px;
     font-weight: bold;
   }
 
-  .card_container {
+  #delete_car_container .card_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-gap: 20px;
     margin-top: 20px;
   }
 
-  .card {
+  #delete_car_container .card {
     width: 80%;
     background-color: #f8f8f8;
     padding: 20px;
@@ -114,25 +113,25 @@
     border-bottom: 1px solid rgb(135, 172, 0);
   }
 
-  .card_img img {
+  #delete_car_container .card_img img {
     width: 100%;
     height: auto;
     border-radius: 4px;
   }
 
-  .card_title {
+  #delete_car_container .card_title {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
   }
 
-  .card_description {
+  #delete_car_container .card_description {
     margin-top: 10px;
     color: #555;
     margin-bottom: 10px;
   }
 
-  .delete_button {
+  #delete_car_container .delete_button {
     margin-top: 10px;
     background-color: #f44336;
     color: #fff;
@@ -144,7 +143,7 @@
     margin-bottom: 5px;
   }
 
-  .delete_button:hover {
+  #delete_car_container .delete_button:hover {
     background-color: #fd0000;
     box-shadow:
       0 4px  4px  rgba(0, 0, 0, 0.1),

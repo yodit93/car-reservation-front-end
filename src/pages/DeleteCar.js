@@ -26,7 +26,7 @@ const DeleteCar = () => {
   return (
     <div className="main_container">
       <NavigationPanel />
-      <div className="delete_car_container">
+      <div id="delete_car_container">
         <div className="card_container">
           {userCars
             && userCars.map((car) => (
