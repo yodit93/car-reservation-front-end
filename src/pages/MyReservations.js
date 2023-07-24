@@ -7,8 +7,13 @@ import '../Styles/myreservations.css';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.users);
   const reservations = useSelector((state) => state.reservations.reservations);
+
   const cars = useSelector((state) => state.cars.cars);
+
+  const userId = currentUser.id;
+  const userReservations = reservations.filter((reservation) => reservation.user_id === userId);
 
   useEffect(() => {
     dispatch(getReservations());
@@ -35,7 +40,7 @@ const MyReservations = () => {
           My Reservations
         </h2>
         <div className="card_main_container" id="add-car-overlay">
-          {reservations.map((reservation) => (
+          {userReservations.map((reservation) => (
             <div key={reservation.id}>
               <div className="card_container">
                 <div className="card_wrapper">
