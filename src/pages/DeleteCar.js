@@ -6,7 +6,11 @@ import NavigationPanel from '../Components/Navigation/NavigationPanel';
 
 const DeleteCar = () => {
   const { cars } = useSelector((state) => state.cars);
+  const { currentUser } = useSelector((state) => state.users);
   const dispatch = useDispatch();
+
+  const userId = currentUser.id;
+  const userCars = cars.filter((car) => car.user_id === userId);
 
   useEffect(() => {
     dispatch(getCars());
@@ -24,8 +28,8 @@ const DeleteCar = () => {
       <NavigationPanel />
       <div className="delete_car_container">
         <div className="card_container">
-          {cars
-            && cars.map((car) => (
+          {userCars
+            && userCars.map((car) => (
               <div key={car.id} className="card">
                 <div className="card_img">
                   <img src={car.image} alt={car.name} />
