@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../styles/models.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
-import { Link } from 'react-router-dom'; // Make sure you import Link from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
 import { scrollLeft, scrollRight, handleScroll } from '../Components/Home/scrollUtilis';
 import { getCars } from '../Redux/carsSlice';
@@ -20,7 +20,7 @@ const Cars = () => {
   const nextBtnRef = useRef(null);
   useEffect(() => {
     dispatch(getCars());
-  }, [dispatch]);
+  }, []);
 
   const container = containerRef.current;
 
@@ -28,13 +28,18 @@ const Cars = () => {
     setIsPrevDisabled(isFirstVisible);
     setIsNextDisabled(isLastVisible);
   }, [isFirstVisible, isLastVisible]);
-
   return (
     <>
-      {isLoading && <div className="loading">Loading...</div>}
-      {cars && (
-        <div className="home-container">
-          <NavigationPanel />
+      <div className="home-container">
+        <NavigationPanel />
+        <div className="home">
+          {isLoading && <div className="custom-loader" />}
+          {cars && cars.length === 0 && !isLoading && (
+            <div className="no-cars">
+              No cars available. Please add a car by clicking the &quot;Add Car&quot; button.
+            </div>
+          )}
+          {cars && cars.length > 0 && (
           <div className="contr">
             <div className="header">
               <h1 className="header-title">LATEST MODELS</h1>
@@ -57,11 +62,10 @@ const Cars = () => {
                 onScroll={() => handleScroll(container, setIsFirstVisible, setIsLastVisible)}
               >
                 {cars.map((car) => (
-                  <Link to={`/cars/${car.id}}`} key={car.id}>
+                  <Link to={`car/${car.id}`} key={car.id} className="card">
                     <CarModel car={car} />
                   </Link>
                 ))}
-
               </div>
               <button
                 type="button"
@@ -74,8 +78,10 @@ const Cars = () => {
               </button>
             </div>
           </div>
+          )}
         </div>
-      )}
+
+      </div>
       {error && <div className="error">{error}</div>}
     </>
   );

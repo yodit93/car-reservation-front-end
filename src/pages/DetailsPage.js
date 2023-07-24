@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCarDetails } from '../Redux/carsSlice';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
-import '../styles/details.css';
-import '../pic/icons8-back-100.png'
+import '../Styles/details.css';
 
 const DetailsPage = () => {
   const { id } = useParams();

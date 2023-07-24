@@ -30,12 +30,12 @@
     background: rgb(240, 237, 237);
   }
 
-  /* styles for the table data cells (td) */
+
   .table-container td {
     padding: 10px;
   }
 
-  /* styles for the labels (strong) in the first column */
+
   .table-container td strong {
     display: inline-block;
     min-width: 120px;
