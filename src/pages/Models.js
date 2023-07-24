@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import '../styles/models.css';
+import '../Styles/models.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
@@ -62,7 +62,7 @@ const Cars = () => {
                 onScroll={() => handleScroll(container, setIsFirstVisible, setIsLastVisible)}
               >
                 {cars.map((car) => (
-                  <Link to={`car/${car.id}`} key={car.id} className="card">
+                  <Link to={`cars/${car.id}`} key={car.id} className="card">
                     <CarModel car={car} />
                   </Link>
                 ))}

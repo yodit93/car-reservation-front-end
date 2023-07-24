@@ -1,21 +1,32 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import AddCar from './pages/AddCar';
 import DeleteCar from './pages/DeleteCar';
 import Models from './pages/Models';
 import MyReservations from './pages/MyReservations';
 import ReserveCar from './pages/ReserveCar';
 import DetailsPage from './pages/DetailsPage';
+import SignUp from './Components/Authentication/SignUp';
+import LogIn from './Components/Authentication/LogIn';
+import PrivateRoutes from './utils/PrivateRoutes';
+import CarDetails from './pages/CarDetails';
 
 function App() {
+  const { isAuthenticated } = useSelector((state) => state.users);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Models />} />
-        <Route path="/bookride" element={<ReserveCar />} />
-        <Route path="/additem" element={<AddCar />} />
-        <Route path="/deleteitem" element={<DeleteCar />} />
-        <Route path="/myreservations" element={<MyReservations />} />
-        <Route path="/cars/:id" element={<DetailsPage />} />
+        <Route element={<PrivateRoutes authenticateUser={isAuthenticated} />}>
+          <Route path="/" element={<Models />} />
+          <Route path="/bookride" element={<ReserveCar />} />
+          <Route path="/additem" element={<AddCar />} />
+          <Route path="/deleteitem" element={<DeleteCar />} />
+          <Route path="/myreservations" element={<MyReservations />} />
+          <Route path="/car/:id" element={<CarDetails />} />
+          <Route path="/cars/:id" element={<DetailsPage />} />
+        </Route>
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
       </Routes>
     </BrowserRouter>
   );
