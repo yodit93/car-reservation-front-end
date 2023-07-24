@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const initialState = {
   users: [],
+  currentUser: JSON.parse(localStorage.getItem('currentUser')) ?? null,
+  isAuthenticated: JSON.parse(localStorage.getItem('currentUser')) ?? false,
   error: null,
 };
 
@@ -18,31 +20,55 @@ export const getUsers = createAsyncThunk('users/getUsers', async (_, { rejectWit
 export const createUser = createAsyncThunk('users/createUser', async (userData, { rejectWithValue }) => {
   try {
     const response = await axios.post(url, userData);
+    localStorage.setItem('currentUser', JSON.stringify(response.data));
+    localStorage.setItem('isAuthenticated', true);
     return response.data;
   } catch (err) {
     return rejectWithValue('Unable to create user');
   }
 });
-export const updateUser = createAsyncThunk('users/updateUser', async ({ userId, userData }, { rejectWithValue }) => {
-  try {
-    const response = await axios.put(`${url}/${userId}`, userData);
-    return response.data;
-  } catch (err) {
-    return rejectWithValue('Unable to update user');
-  }
-});
-export const deleteUser = createAsyncThunk('users/deleteUser', async (userId, { rejectWithValue }) => {
-  try {
-    await axios.delete(`${url}/${userId}`);
-    return userId;
-  } catch (err) {
-    return rejectWithValue('Unable to delete user');
-  }
-});
+export const loginUser = createAsyncThunk(
+  'users/loginUser',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('http://127.0.0.1:3001/users/sign_in', userData, {
+        withCredentials: true,
+      });
+      localStorage.setItem('currentUser', JSON.stringify(response.data.user));
+      localStorage.setItem('isAuthenticated', true);
+      return response.data.user;
+    } catch (err) {
+      return rejectWithValue('Unable to log in the user');
+    }
+  },
+);
+export const signOutUser = createAsyncThunk(
+  'users/signOutUser',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.delete('http://127.0.0.1:3001/users/sign_out', {
+        withCredentials: true,
+      });
+      localStorage.removeItem('currentUser');
+      localStorage.setItem('isAuthenticated', false);
+      return response.data;
+    } catch (err) {
+      localStorage.removeItem('currentUser');
+      localStorage.setItem('isAuthenticated', false);
+      return rejectWithValue('Unable to sign out the user');
+    }
+  },
+);
 
 const usersSlice = createSlice({
   name: 'users',
   initialState,
+  reducers: {
+    clearError: (state) => ({
+      ...state,
+      error: null,
+    }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getUsers.pending, (state) => ({
@@ -66,6 +92,8 @@ const usersSlice = createSlice({
       .addCase(createUser.fulfilled, (state, { payload }) => ({
         ...state,
         users: [...state.users, payload], // Add the created user to the existing list
+        currentUser: payload,
+        isAuthenticated: true,
         isLoading: false,
       }))
       .addCase(createUser.rejected, (state, { payload }) => ({
@@ -73,44 +101,26 @@ const usersSlice = createSlice({
         isLoading: false,
         error: payload,
       }))
-      .addCase(updateUser.pending, (state) => ({
+      .addCase(loginUser.fulfilled, (state, { payload }) => ({
         ...state,
-        isLoading: true,
+        currentUser: payload,
+        isAuthenticated: true,
       }))
-      .addCase(updateUser.fulfilled, (state, { payload }) => {
-        const updatedUsers = state.users.map((user) => {
-          if (user.id === payload.id) {
-            return payload; // Replace the updated user in the list
-          }
-          return user;
-        });
-
-        return {
-          ...state,
-          users: updatedUsers,
-          isLoading: false,
-        };
-      })
-      .addCase(updateUser.rejected, (state, { payload }) => ({
+      .addCase(loginUser.rejected, (state, { payload }) => ({
         ...state,
-        isLoading: false,
         error: payload,
       }))
-      .addCase(deleteUser.pending, (state) => ({
+      .addCase(signOutUser.fulfilled, (state) => ({
         ...state,
-        isLoading: true,
+        currentUser: null,
+        isAuthenticated: false,
       }))
-      .addCase(deleteUser.fulfilled, (state, { payload }) => ({
+      .addCase(signOutUser.rejected, (state, { payload }) => ({
         ...state,
-        users: state.users.filter((user) => user.id !== payload),
-        isLoading: false,
-      }))
-      .addCase(deleteUser.rejected, (state, { payload }) => ({
-        ...state,
-        isLoading: false,
         error: payload,
       }));
   },
 });
 
+export const { clearError } = usersSlice.actions;
 export default usersSlice.reducer;
