@@ -101,7 +101,6 @@ footer p {
   display: none;
 }
 
-@media (max-width: 899px) {
 .logout {
   width: fit-content;
   padding: 10px 40px;
