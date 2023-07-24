@@ -9,7 +9,6 @@ import DetailsPage from './pages/DetailsPage';
 import SignUp from './Components/Authentication/SignUp';
 import LogIn from './Components/Authentication/LogIn';
 import PrivateRoutes from './utils/PrivateRoutes';
-import CarDetails from './pages/CarDetails';
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.users);

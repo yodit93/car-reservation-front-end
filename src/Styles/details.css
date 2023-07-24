@@ -30,11 +30,9 @@
     background: rgb(240, 237, 237);
   }
 
-
   .table-container td {
     padding: 10px;
   }
-
 
   .table-container td strong {
     display: inline-block;
