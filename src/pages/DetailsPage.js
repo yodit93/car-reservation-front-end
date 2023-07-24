@@ -18,9 +18,7 @@ const DetailsPage = () => {
     <div className="details-page">
       <NavigationPanel />
       <div className="details-image-container">
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
+        {(
           cardetails.map((element) => (
             <div className="thecar"><img key={element.id} src={element.image} alt={element.model} className="carimage" /></div>
           ))
