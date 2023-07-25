@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useParams, NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiChevronRight } from 'react-icons/bi';
 import { CiSettings } from 'react-icons/ci';
@@ -11,12 +10,12 @@ import NavigationPanel from '../Components/Navigation/NavigationPanel';
 import '../Styles/details.css';
 
 const DetailsPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { cardetails } = useSelector((store) => store.cars);
   const handleClick = () => {
-navigate('/')
+    navigate('/');
   };
   useEffect(() => {
     dispatch(fetchCarDetails(id));
