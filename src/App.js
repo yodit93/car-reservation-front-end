@@ -22,6 +22,7 @@ function App() {
           <Route path="/deleteitem" element={<DeleteCar />} />
           <Route path="/myreservations" element={<MyReservations />} />
           <Route path="/car/:id" element={<CarDetails />} />
+          <Route path="/bookride/:id" element={<ReserveCar />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
@@ -29,5 +30,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
