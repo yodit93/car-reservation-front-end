@@ -131,7 +131,7 @@ footer p {
   top: 3px;
 }
 
-@media (max-width: 765px) {
+@media (max-width: 900px) {
   header {
     display: block;
     width: 100%;

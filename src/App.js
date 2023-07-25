@@ -8,7 +8,7 @@ import ReserveCar from './pages/ReserveCar';
 import SignUp from './Components/Authentication/SignUp';
 import LogIn from './Components/Authentication/LogIn';
 import PrivateRoutes from './utils/PrivateRoutes';
-import CarDetails from './pages/CarDetails';
+import DetailsPage from './pages/DetailsPage';
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.users);
@@ -21,7 +21,7 @@ function App() {
           <Route path="/additem" element={<AddCar />} />
           <Route path="/deleteitem" element={<DeleteCar />} />
           <Route path="/myreservations" element={<MyReservations />} />
-          <Route path="/car/:id" element={<CarDetails />} />
+          <Route path="/cars/:id" element={<DetailsPage />} />
           <Route path="/bookride/:id" element={<ReserveCar />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />

@@ -1,0 +1,218 @@
+/* details.css */
+@media screen and (min-width: 900px) {
+  .details-div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 50px;
+  }
+
+  .cunt {
+    display: flex;
+  }
+
+  .stadium {
+    width: auto;
+    max-width: 700px;
+    min-width: 400px;
+    height: auto;
+  }
+
+  .img-wrapper {
+    background-color: black;
+    padding: 0;
+  }
+
+  .header {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .details-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .details {
+    border: 1px solid lightgray;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    width: 110%;
+  }
+
+  .details-header {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .details-body-item {
+    padding: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .details-body-item:nth-child(even) {
+    background-color: lightgray;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .discover {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .discover > span {
+    font-size: 30px;
+  }
+
+  .multicolor {
+    margin-left: 30%;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buy {
+    color: white;
+    background-color: rgb(83, 123, 42);
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .buy:hover {
+    color: rgb(83, 123, 42);
+    background-color: white;
+    border: 2px solid lawngreen;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 900px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .details-div {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stadium {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .img-wrapper {
+    width: 300px;
+  }
+
+  .header {
+    font-weight: bold;
+    font-size: 27px;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .details {
+    border: 1px solid lightgray;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .details-header {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .details-body-item {
+    padding: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .details-body-item:nth-child(even) {
+    background-color: lightgray;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .discover {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .discover > span {
+    font-size: 30px;
+  }
+
+  .multicolor {
+    margin-left: 30%;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buy {
+    color: white;
+    background-color: rgb(83, 123, 42);
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .buy:hover {
+    color: lawngreen;
+    background-color: white;
+    border: 2px solid lawngreen;
+    transition: 0.5s ease-in-out;
+  }
+}

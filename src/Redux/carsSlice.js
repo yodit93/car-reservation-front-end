@@ -4,7 +4,8 @@ import axios from 'axios';
 const initialState = {
   cars: [],
   error: null,
-  isLoading: true,
+  isLoading: false,
+  cardetails: [],
 };
 
 const url = 'http://127.0.0.1:3001/api/v1/cars';
@@ -38,6 +39,15 @@ export const deleteCar = createAsyncThunk('cars/deleteCar', async (carId, { reje
     return carId;
   } catch (err) {
     return rejectWithValue('Unable to delete car');
+  }
+});
+
+export const fetchCarDetails = createAsyncThunk('cars/cardetails', async (id) => {
+  try {
+    const response = await axios.get(`http://127.0.0.1:3001/api/v1/cars/${id}`);
+    return response.data;
+  } catch (error) {
+    return error.message;
   }
 });
 
@@ -94,7 +104,16 @@ const carsSlice = createSlice({
         ...state,
         isLoading: false,
         error: payload,
-      }));
+      }))
+      .addCase(fetchCarDetails.fulfilled, (state, { payload }) => {
+        const newDescription = [];
+        newDescription.push(payload);
+        return {
+          ...state,
+          isLoading: false,
+          cardetails: newDescription,
+        };
+      });
   },
 });
 
