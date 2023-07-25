@@ -248,10 +248,7 @@ If you like this project... Kindly leave a star ⭐
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-
-
-I would like to thank  Microverse
-
+We would like to thank Microverse for this project and [Murat Korkmaz on Behance](https://www.behance.net/muratk) for the original design idea.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

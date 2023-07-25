@@ -15,7 +15,6 @@ const DetailsPage = () => {
   useEffect(() => {
     dispatch(fetchCarDetails(id));
   }, [dispatch]);
-  console.log(cardetails);
   return (
     <div id="detailspage">
       <NavigationPanel />
