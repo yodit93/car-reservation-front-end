@@ -9,7 +9,7 @@
   align-items: center;
   text-align: center;
   background-color: rgb(102, 130, 1);
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRioazmTDfs2d1qHdvw6Euz5o2-AOZhRWNjySEA0xBmONFsKIlj8Cg2ovY8YHYGRsi2ed0&usqp=CAU");
+  background-image: url("https://s1.1zoom.me/big0/660/Shelby_Super_Cars_White_background_White_559662_1280x853.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,7 +27,7 @@
   height: 92vh;
   width: 100vw;
   background-color: rgb(102, 130, 1);
-  mix-blend-mode: darken;
+  mix-blend-mode: multiply;
 }
 
 #add-car-container form {
