@@ -14,7 +14,7 @@ const DeleteCar = () => {
 
   useEffect(() => {
     dispatch(getCars());
-  }, [dispatch]);
+  }, []);
 
   const handleDeleteCar = (carId) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this car?');
@@ -34,9 +34,9 @@ const DeleteCar = () => {
                 <div className="card_img">
                   <img src={car.image} alt={car.name} />
                 </div>
-                <div className="card_title">
+                <h3 className="card_title">
                   {car.name}
-                </div>
+                </h3>
                 <div className="card_description">
                   {car.description}
                 </div>

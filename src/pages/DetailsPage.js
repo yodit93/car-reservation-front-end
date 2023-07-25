@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { useParams, NavLink, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { BiChevronRight } from 'react-icons/bi';
 import { CiSettings } from 'react-icons/ci';
 import multicolor from './images/multicolor.png';
 
@@ -10,42 +9,39 @@ import NavigationPanel from '../Components/Navigation/NavigationPanel';
 import '../Styles/details.css';
 
 const DetailsPage = () => {
-  const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { cardetails } = useSelector((store) => store.cars);
-  const handleClick = () => {
-    navigate('/');
-  };
   useEffect(() => {
     dispatch(fetchCarDetails(id));
   }, [dispatch]);
   console.log(cardetails);
   return (
-    <div className="cunt">
+    <div id="detailspage">
       <NavigationPanel />
-      <div id={id}>
+      <div className="detailspage-cont">
         {cardetails.map((element) => (
-          <div className="details-div" key={element.id}>
-
-            <img src={element.image} alt="stadium" className="stadium" />
-            <div className="wrapper">
+          <div className="details-content" key={element.id}>
+            <div className="details-img-cont">
+              <img src={element.image} alt="stadium" className="stadium" />
+            </div>
+            <div className="details-info">
               <div className="details">
+                <h3>Car Info</h3>
                 <ul className="details-body">
-                  <div className="details-header">More details</div>
                   <li className="details-body-item">
-                    Name:
+                    <span>Name:</span>
                     <span>{element.name}</span>
                   </li>
                   <li className="details-body-item">
-                    Price:
+                    <span>Price:</span>
                     <span>
                       $
                       {element.price}
                     </span>
                   </li>
                   <li className="details-body-item">
-                    Model:
+                    <span>Model:</span>
                     <span>
                       {element.model}
                     </span>
@@ -54,30 +50,18 @@ const DetailsPage = () => {
                 {' '}
 
               </div>
-              <div
-                className="discover"
-                onClick={handleClick}
-                onKeyDown={handleClick}
-                role="presentation"
-              >
-                discover more cars
-                <span
-                  onClick={handleClick}
-                  onKeyDown={handleClick}
-                  role="presentation"
-                >
-                  <BiChevronRight />
-                </span>
-              </div>
-              <img src={multicolor} alt="multicolor" className="multicolor" />
-              <NavLink
-                to={`/bookride/${id}`}
-                className="buy"
-                id={id}
-              >
-                <span><CiSettings className="sett" /></span>
-                Reserve
-              </NavLink>
+              <footer id="details-footer">
+                <div className="color-wheel">
+                  <img src={multicolor} alt="multicolor" className="multicolor" />
+                </div>
+                <div>
+                  <Link to={`/bookride/${id}`}>
+                    <CiSettings />
+                    {' '}
+                    RESERVE
+                  </Link>
+                </div>
+              </footer>
             </div>
           </div>
         ))}

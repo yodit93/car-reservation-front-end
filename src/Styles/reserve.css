@@ -30,14 +30,14 @@
 }
 
 .reserve-cont {
-  width: 80%;
+  width: 90%;
 }
 
 .reserve-cont h1 {
   position: relative;
-  width: 50%;
+  width: 100%;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff;
   margin-bottom: 40px;
   z-index: 5;
@@ -120,15 +120,19 @@
     width: 40%;
   }
 
+  .reserve-cont form input {
+    width: 100%;
+  }
+
   #car_id,
   #city {
-    width: 81%;
+    width: 100%;
     height: 40px;
     border-radius: 10px;
   }
 
   .reserve-cont {
-    width: 50vw;
+    width: 80vw;
     height: 46vh;
     flex-direction: column;
     align-items: center;
@@ -155,11 +159,12 @@
   .reserve-date,
   .reserve-select {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .reserve-cont .submit-btn {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
   }
 }

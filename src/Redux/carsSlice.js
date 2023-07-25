@@ -4,7 +4,7 @@ import axios from 'axios';
 const initialState = {
   cars: [],
   error: null,
-  isLoading: false,
+  isLoading: true,
   cardetails: [],
 };
 
