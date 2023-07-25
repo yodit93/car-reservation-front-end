@@ -71,7 +71,7 @@ const DetailsPage = () => {
               </div>
               <img src={multicolor} alt="multicolor" className="multicolor" />
               <NavLink
-                to="reserve"
+                to={`/bookride/${id}`}
                 className="buy"
                 id={id}
               >

@@ -1,9 +1,8 @@
 /* details.css */
 @media screen and (min-width: 900px) {
   .details-div {
-    width: 110%;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
     align-items: center;
     margin-left: 20px;
     margin-top: 50px;
