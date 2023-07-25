@@ -76,7 +76,7 @@ const DetailsPage = () => {
                 id={id}
               >
                 <span><CiSettings className="sett" /></span>
-                reserve
+                Reserve
               </NavLink>
             </div>
           </div>
