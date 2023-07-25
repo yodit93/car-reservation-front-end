@@ -1,10 +1,10 @@
-@media (max-width: 768px) {
-  .reservation_main_container {
+@media (max-width: 765px) {
+  #reservation-page .reservation_main_container {
     display: flex;
     flex-direction: column;
   }
 
-  .reservation_container {
+  #reservation-page .reservation_container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -14,7 +14,7 @@
     background-repeat: no-repeat;
   }
 
-  .reservations_header {
+  #reservation-page .reservations_header {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -22,15 +22,16 @@
     font-weight: 700;
   }
 
-  .card_main_container {
+  #reservation-page .card_main_container {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 80%;
     gap: 40px;
     overflow: hidden;
+    margin-bottom: 40px;
   }
 
-  .card_container {
+  #reservation-page .card_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +39,7 @@
     gap: 30px;
   }
 
-  .card_wrapper {
+  #reservation-page .card_wrapper {
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
@@ -52,18 +53,19 @@
     color: white;
   }
 
-  .card_detail {
+  #reservation-page .card_detail {
     display: flex;
     align-items: center;
     padding: 12px;
-    height: 3rem;
+    height: 2rem;
+    font-size: 20px;
   }
 
-  h2.card_detail {
+  #reservation-page h2.card_detail {
     justify-content: center;
   }
 
-  .delete_reservation {
+  #reservation-page .delete_reservation {
     background-color: #ff5f5f;
     color: white;
     border: none;
@@ -72,12 +74,12 @@
     cursor: pointer;
   }
 
-  .delete_reservation:hover {
+  #reservation-page .delete_reservation:hover {
     background-color: #fc5d5daa;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .reservation_main_container {
     display: flex;
   }
@@ -94,28 +96,29 @@
     background-repeat: no-repeat;
   }
 
-  .reservations_header {
+  #reservation-page .reservations_header {
     text-align: center;
     margin-top: 2rem;
-    font-size: 36px;
+    font-size: 2rem;
   }
 
-  .card_main_container {
+  #reservation-page .card_main_container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     gap: 30px;
   }
 
-  .card_container {
+  #reservation-page .card_container {
     display: flex;
     width: 390px;
     gap: 20px;
     padding: 20px;
   }
 
-  .card_wrapper {
+  #reservation-page .card_wrapper {
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
@@ -130,19 +133,19 @@
     font-weight: 700;
   }
 
-  .card_detail {
+  #reservation-page .card_detail {
     display: flex;
     align-items: center;
     width: 100%;
     padding: 12px;
-    height: 4rem;
+    height: 3rem;
   }
 
-  h2.card_detail {
+  #reservation-page h2.card_detail {
     justify-content: center;
   }
 
-  .delete_reservation {
+  #reservation-page .delete_reservation {
     background-color: #ff5f5f;
     color: white;
     border: none;
@@ -151,7 +154,7 @@
     cursor: pointer;
   }
 
-  .delete_reservation:hover {
+  #reservation-page .delete_reservation:hover {
     background-color: #fc5d5daa;
   }
 }

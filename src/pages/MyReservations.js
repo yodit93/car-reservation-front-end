@@ -18,7 +18,7 @@ const MyReservations = () => {
   useEffect(() => {
     dispatch(getReservations());
     dispatch(getCars());
-  }, [dispatch]);
+  }, []);
 
   const handleDelete = (id) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this Reservation?');
@@ -33,7 +33,7 @@ const MyReservations = () => {
   };
 
   return (
-    <div className="reservation_main_container">
+    <div className="reservation_main_container" id="reservation-page">
       <NavigationPanel />
       <div className="reservation_container">
         <h2 className="reservations_header">
