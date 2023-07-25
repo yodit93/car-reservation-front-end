@@ -5,10 +5,10 @@ import DeleteCar from './pages/DeleteCar';
 import Models from './pages/Models';
 import MyReservations from './pages/MyReservations';
 import ReserveCar from './pages/ReserveCar';
-import DetailsPage from './pages/DetailsPage';
 import SignUp from './Components/Authentication/SignUp';
 import LogIn from './Components/Authentication/LogIn';
 import PrivateRoutes from './utils/PrivateRoutes';
+import DetailsPage from './pages/DetailsPage';
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.users);
@@ -22,6 +22,7 @@ function App() {
           <Route path="/deleteitem" element={<DeleteCar />} />
           <Route path="/myreservations" element={<MyReservations />} />
           <Route path="/cars/:id" element={<DetailsPage />} />
+          <Route path="/bookride/:id" element={<ReserveCar />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
@@ -29,5 +30,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
