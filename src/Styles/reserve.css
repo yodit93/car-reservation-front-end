@@ -1,0 +1,165 @@
+.reserve-car-page {
+  display: block;
+}
+
+.reserve-holder {
+  position: relative;
+  width: 100vw;
+  height: 91.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://s1.1zoom.me/big0/660/Shelby_Super_Cars_White_background_White_559662_1280x853.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.reserve-car-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 91.6vh;
+  width: 100%;
+  background-color: rgb(102, 130, 1);
+  mix-blend-mode: multiply;
+}
+
+.reserve-form {
+  position: relative;
+}
+
+.reserve-cont {
+  width: 80%;
+}
+
+.reserve-cont h1 {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 40px;
+  z-index: 5;
+  letter-spacing: 5px;
+  font-family: 'Lugrasimo', cursive;
+  border-bottom: 3px solid rgb(207, 206, 206);
+}
+
+.reserve-cont form input {
+  display: block;
+  width: 81%;
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+}
+
+.reserve-cont form select {
+  width: 81%;
+  padding: 8px;
+  display: block;
+  border-radius: 10px;
+}
+
+.reserve-cont form label {
+  color: #fff;
+  font-family: 'Lugrasimo', cursive;
+  width: 100%;
+}
+
+.reserve-date,
+.reserve-select {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.reserve-cont form button[type="submit"] {
+  background: linear-gradient(to right, #d4d4d4, rgb(111, 142, 0));
+  font-weight: bolder;
+  font-size: 18px;
+  padding: 8px;
+  width: 8rem;
+  border-radius: 50px;
+  border: 2px solid  #000000b5;
+  box-shadow: 0 -10px  rgba(50, 50, 50, 0.9);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-right: 3rem;
+}
+
+.reserve-cont form button[type="submit"]:hover {
+  box-shadow: 0 -7px  rgba(50, 50, 50, 0.9);
+  background: linear-gradient(to right, #d4d4d4, rgb(90, 115, 2));
+}
+
+.reserve-cont .submit-btn {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.reserve-cont form button[type="submit"]:active {
+  background-color: rgb(107, 137, 0);
+}
+
+@media (min-width: 768px) {
+  .reserve-car-page {
+    display: flex;
+  }
+
+  .reserve-holder {
+    height: 100vh;
+  }
+
+  .reserve-cont form label {
+    width: 40%;
+  }
+
+  #car_id,
+  #city {
+    width: 81%;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .reserve-cont {
+    width: 50vw;
+    height: 46vh;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+  }
+
+  .reserve-car-overlay {
+    height: 100vh;
+  }
+
+  .reserve-cont h1 {
+    width: 40%;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0 42px 60px 0;
+  }
+
+  .reserve-form {
+    display: flex;
+    flex-direction: column;
+    width: 528px;
+  }
+
+  .reserve-date,
+  .reserve-select {
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: row;
+  }
+
+  .reserve-cont .submit-btn {
+    margin-top: 3rem;
+  }
+}
