@@ -61,7 +61,7 @@ const Form = () => {
       <Input
         name="name"
         value={name}
-        placeholder="Username"
+        placeholder="Car Name"
         type="text"
         handleInput={handelFormInputs}
       />

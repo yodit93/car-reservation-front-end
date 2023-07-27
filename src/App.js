@@ -10,7 +10,7 @@ import LogIn from './Components/Authentication/LogIn';
 import PrivateRoutes from './utils/PrivateRoutes';
 import DetailsPage from './pages/DetailsPage';
 
-function App() {
+const App = () => {
   const { isAuthenticated } = useSelector((state) => state.users);
   return (
     <BrowserRouter>
@@ -29,5 +29,5 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 export default App;
