@@ -227,16 +227,8 @@ a {
     justify-content: center;
   }
 
-  .wrap {
-    min-height: 500px;
-    padding: 20px 0;
-  }
-  
-
   .card {
     flex: 0 0 calc(50% - 1rem);
-    min-height: 100%;
-    width: 80%
   }
 
   .img-cont {
@@ -311,15 +303,8 @@ a {
     justify-content: center;
   }
 
-  .wrap {
-    min-height: 500px;
-    padding: 20px 0;
-  }
-
   .card {
     flex: 0 0 calc(50% - 1rem);
-    min-height: 100%;
-    width: 80%
   }
 
   .img-cont {
