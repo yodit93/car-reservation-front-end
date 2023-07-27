@@ -233,13 +233,10 @@ a {
 
   .img-cont {
     margin-bottom: 10%;
-    width: 25vw;
-    height: 27vh;
   }
 
   .img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
     border-radius: 20px;
   }
 
@@ -309,13 +306,11 @@ a {
 
   .img-cont {
     margin-bottom: 10%;
-    width: 25vw;
-    height: 27vh;
+    width: 100%;
   }
 
   .img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
     border-radius: 20px;
   }
 
