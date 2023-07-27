@@ -10,7 +10,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    - [� API Documentation ](#-api-documentation-)
     - [ Kanban Board ](#-kanban-board-)
     - [ Rails Backend ](#-rails-backend-)
 - [💻 Getting Started](#getting-started)
@@ -74,14 +73,6 @@ Cabooker is a user-friendly and efficient car booking application that empowers 
 - User can delete his/her reservation
 
   
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- API DOCUMENTATION -->
-
-## 🗎 API Documentation <a name="api-docs"></a>
-
-- Check here API documentation [CarBooker app](https://carbooker.onrender.com/api-docs/index.html)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- KANBAN BOARD -->
