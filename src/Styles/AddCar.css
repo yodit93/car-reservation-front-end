@@ -1,0 +1,139 @@
+#add-car-container {
+  position: relative;
+  width: 100vw;
+  height: 92vh;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(102, 130, 1);
+  background-image: url("https://s1.1zoom.me/big0/660/Shelby_Super_Cars_White_background_White_559662_1280x853.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#add-car-container h1 {
+  text-decoration: underline;
+  color: #fff;
+  letter-spacing: 5px;
+  font-size: 30px;
+  z-index: 10;
+}
+
+.add-car-overlay {
+  position: absolute;
+  height: 92vh;
+  width: 100vw;
+  background-color: rgb(102, 130, 1);
+  mix-blend-mode: multiply;
+}
+
+#add-car-container form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 5;
+}
+
+#add-car-container form input,
+#add-car-container form textarea {
+  display: block;
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  transition: all, 0.1s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+  border-radius: 20px 0;
+}
+
+#add-car-container form input {
+  height: 50px;
+}
+
+#add-car-container form textarea {
+  height: 120px;
+}
+
+#add-car-container form input:focus,
+#add-car-container form textarea:focus {
+  border-bottom: 4px solid rgb(150, 191, 1);
+}
+
+#add-car-container form input::placeholder,
+#add-car-container form textarea::placeholder {
+  font-weight: bold;
+}
+
+#add-car-container form button[type="submit"] {
+  background: linear-gradient(to right, #d4d4d4, rgb(111, 142, 0));
+  font-weight: bolder;
+  font-size: 25px;
+  padding: 15px;
+  width: 10rem;
+  border-radius: 50px;
+  border: 2px solid  #000000b5;
+  box-shadow: 0 -10px  rgba(50, 50, 50, 0.9);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#add-car-container form button[type="submit"]:hover {
+  box-shadow: 0 -7px  rgba(50, 50, 50, 0.9);
+  background: linear-gradient(to right, #d4d4d4, rgb(90, 115, 2));
+}
+
+.submit-btn {
+  margin-top: 20px;
+}
+
+#add-car-container form button[type="submit"]:active {
+  background-color: rgb(107, 137, 0);
+}
+
+#add-car-container form button[type="submit"]:disabled {
+  background: rgba(77, 77, 77, 0.8);
+  color: #e7e7e792;
+  opacity: 0.8 !important;
+  border: none;
+  box-shadow: none;
+}
+
+@media (min-width: 765px) {
+  .add-car-page {
+    display: flex;
+  }
+
+  #add-car-container {
+    background-color: rgb(102, 130, 1);
+    background-image: url("https://s1.1zoom.me/big0/660/Shelby_Super_Cars_White_background_White_559662_1280x853.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+
+  #add-car-container h1 {
+    font-size: 40px;
+  }
+
+  .add-car-overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(102, 130, 1);
+    mix-blend-mode: multiply;
+  }
+
+  #add-car-container form {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

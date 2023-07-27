@@ -1,0 +1,141 @@
+#detailspage .detailspage-cont {
+  padding: 20px;
+}
+
+#detailspage .details-img-cont {
+  height: 200px;
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 20px;
+}
+
+#detailspage .details-img-cont img {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+#detailspage .details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#detailspage .details h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Lugrasimo', cursive;
+}
+
+#detailspage .details ul {
+  width: 100%;
+}
+
+#detailspage .details ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#detailspage .details ul li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#detailspage .details ul li span {
+  display: block;
+}
+
+#detailspage .details ul li span:nth-child(even) {
+  font-weight: bold;
+}
+
+#detailspage .color-wheel {
+  width: 100px;
+  height: 100px;
+}
+
+#detailspage .color-wheel img {
+  width: 100%;
+  height: 100%;
+}
+
+#detailspage #details-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#detailspage #details-footer a {
+  display: block;
+  background-color: rgb(102, 130, 1);
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  transition: all 0.3s ease;
+}
+
+#detailspage #details-footer a:hover,
+#detailspage #details-footer a:focus {
+  background-color: rgb(72, 91, 7);
+  color: #ebeaea;
+}
+
+@media (min-width: 765px) {
+  #detailspage {
+    display: flex;
+  }
+
+  #detailspage .detailspage-cont {
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+  }
+
+  #detailspage .details-content {
+    width: 76vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #detailspage .details-img-cont {
+    height: 55%;
+    width: 70%;
+    align-self: center;
+  }
+
+  #detailspage .details-info {
+    width: 30%;
+    margin-left: 20px;
+  }
+
+  #detailspage .details h3 {
+    margin: 30px;
+  }
+
+  #detailspage .details ul li span {
+    font-size: 18px;
+  }
+
+  #detailspage #details-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 80px;
+  }
+
+  #detailspage .color-wheel {
+    width: 150px;
+    height: 150px;
+  }
+
+  #detailspage .color-wheel img {
+    width: 100%;
+    height: 100%;
+  }
+}
