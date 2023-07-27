@@ -14,7 +14,7 @@ const DeleteCar = () => {
 
   useEffect(() => {
     dispatch(getCars());
-  }, []);
+  }, [dispatch]);
 
   const handleDeleteCar = (carId) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this car?');

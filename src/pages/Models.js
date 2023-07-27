@@ -20,7 +20,7 @@ const Cars = () => {
   const nextBtnRef = useRef(null);
   useEffect(() => {
     dispatch(getCars());
-  }, []);
+  }, [dispatch]);
 
   const container = containerRef.current;
 
