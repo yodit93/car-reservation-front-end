@@ -30,7 +30,7 @@
 
 ## 📖 CarBooker <a name="about-project"></a>
 
-Cabooker is a user-friendly and efficient car booking application that empowers users to reserve their preferred vehicles seamlessly. Whether you need a car for a business trip, vacation, or simply for your daily commute, Cabooker offers a diverse selection of cars to suit your needs. Cabooker is a full-stack application built with React and Ruby on Rails. The application is deployed on Render.
+Cabooker is a user-friendly and efficient car booking application that empowers users to reserve their preferred vehicles seamlessly. Whether you need a car for a business trip, vacation, or simply for your daily commute, Cabooker offers a diverse selection of cars to suit your needs. Cabooker is a full-stack application built with React and Ruby on Rails.
 
 ## 🛠 Built With  VSCode  <a name="Built With VSCode"></a>
 
