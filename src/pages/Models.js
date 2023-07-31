@@ -18,11 +18,12 @@ const Cars = () => {
   const containerRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
+
+  const container = containerRef.current;
+
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch]);
-
-  const container = containerRef.current;
 
   useEffect(() => {
     setIsPrevDisabled(isFirstVisible);
