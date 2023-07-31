@@ -4,7 +4,7 @@ import axios from 'axios';
 const initialState = {
   users: [],
   currentUser: JSON.parse(localStorage.getItem('currentUser')) ?? null,
-  isAuthenticated: JSON.parse(localStorage.getItem('currentUser')) ?? false,
+  isAuthenticated: JSON.parse(localStorage.getItem('isAuthenticated')) ?? false,
   error: null,
 };
 

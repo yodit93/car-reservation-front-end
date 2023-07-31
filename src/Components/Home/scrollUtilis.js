@@ -1,27 +1,31 @@
 export const scrollLeft = (container) => {
-  let scrollAmount;
-  if (window.innerWidth <= 768) {
-    scrollAmount = container.offsetWidth; // Adjust the scroll amount for mobile devices
-  } else {
-    scrollAmount = container.offsetWidth / 2; // Default scroll amount for desktop devices
+  if (container) {
+    let scrollAmount;
+    if (window.innerWidth <= 768) {
+      scrollAmount = container.offsetWidth; // Adjust the scroll amount for mobile devices
+    } else {
+      scrollAmount = container.offsetWidth / 2; // Default scroll amount for desktop devices
+    }
+    container.scrollTo({
+      left: container.scrollLeft - scrollAmount,
+      behavior: 'smooth',
+    });
   }
-  container.scrollTo({
-    left: container.scrollLeft - scrollAmount,
-    behavior: 'smooth',
-  });
 };
 
 export const scrollRight = (container) => {
-  let scrollAmount;
-  if (window.innerWidth <= 768) {
-    scrollAmount = container.offsetWidth; // Adjust the scroll amount for mobile devices
-  } else {
-    scrollAmount = container.offsetWidth / 2; // Default scroll amount for desktop devices
+  if (container) {
+    let scrollAmount;
+    if (window.innerWidth <= 768) {
+      scrollAmount = container.offsetWidth; // Adjust the scroll amount for mobile devices
+    } else {
+      scrollAmount = container.offsetWidth / 2; // Default scroll amount for desktop devices
+    }
+    container.scrollTo({
+      left: container.scrollLeft + scrollAmount,
+      behavior: 'smooth',
+    });
   }
-  container.scrollTo({
-    left: container.scrollLeft + scrollAmount,
-    behavior: 'smooth',
-  });
 };
 
 export const handleScroll = (container, setIsFirstVisible, setIsLastVisible) => {
