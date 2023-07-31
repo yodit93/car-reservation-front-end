@@ -10,7 +10,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    - [� API Documentation ](#-api-documentation-)
     - [ Kanban Board ](#-kanban-board-)
     - [ Rails Backend ](#-rails-backend-)
 - [💻 Getting Started](#getting-started)
@@ -31,7 +30,7 @@
 
 ## 📖 CarBooker <a name="about-project"></a>
 
-Cabooker is a user-friendly and efficient car booking application that empowers users to reserve their preferred vehicles seamlessly. Whether you need a car for a business trip, vacation, or simply for your daily commute, Cabooker offers a diverse selection of cars to suit your needs. Cabooker is a full-stack application built with React and Ruby on Rails. The application is deployed on Render.
+Cabooker is a user-friendly and efficient car booking application that empowers users to reserve their preferred vehicles seamlessly. Whether you need a car for a business trip, vacation, or simply for your daily commute, Cabooker offers a diverse selection of cars to suit your needs. Cabooker is a full-stack application built with React and Ruby on Rails.
 
 ## 🛠 Built With  VSCode  <a name="Built With VSCode"></a>
 
@@ -74,14 +73,6 @@ Cabooker is a user-friendly and efficient car booking application that empowers 
 - User can delete his/her reservation
 
   
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- API DOCUMENTATION -->
-
-## 🗎 API Documentation <a name="api-docs"></a>
-
-- Check here API documentation [CarBooker app](https://carbooker.onrender.com/api-docs/index.html)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- KANBAN BOARD -->
