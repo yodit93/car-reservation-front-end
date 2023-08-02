@@ -15,10 +15,9 @@ const Cars = () => {
   const [isLastVisible, setIsLastVisible] = useState(false);
   const [isPrevDisabled, setIsPrevDisabled] = useState(true);
   const [isNextDisabled, setIsNextDisabled] = useState(false);
-  const containerRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
-  const container = containerRef.current;
+  const container = document.querySelector('.cars');
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch]);
@@ -56,7 +55,6 @@ const Cars = () => {
               </button>
               <div
                 className="cars"
-                ref={containerRef}
                 onScroll={() => handleScroll(container, setIsFirstVisible, setIsLastVisible)}
               >
                 {cars.map((car) => (
