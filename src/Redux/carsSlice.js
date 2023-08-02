@@ -8,7 +8,7 @@ const initialState = {
   cardetails: [],
 };
 
-const url = 'http://127.0.0.1:3001/api/v1/cars';
+const url = 'https://carbooker.onrender.com/api/v1/cars';
 export const getCars = createAsyncThunk('cars/getCars', async (_, { rejectWithValue }) => {
   try {
     const response = await axios(url);
@@ -44,7 +44,7 @@ export const deleteCar = createAsyncThunk('cars/deleteCar', async (carId, { reje
 
 export const fetchCarDetails = createAsyncThunk('cars/cardetails', async (id) => {
   try {
-    const response = await axios.get(`http://127.0.0.1:3001/api/v1/cars/${id}`);
+    const response = await axios.get(`${url}/${id}`);
     return response.data;
   } catch (error) {
     return error.message;

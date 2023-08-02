@@ -18,10 +18,7 @@ const Cars = () => {
   const containerRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
-  const [container, setContainer] = useState(null);
-  useEffect(() => {
-    setContainer(containerRef.current);
-  }, []);
+  const container = containerRef.current;
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch]);

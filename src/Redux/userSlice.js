@@ -8,7 +8,7 @@ const initialState = {
   error: null,
 };
 
-const url = 'http://127.0.0.1:3001/api/v1/users';
+const url = 'https://carbooker.onrender.com/api/v1/users';
 export const getUsers = createAsyncThunk('users/getUsers', async (_, { rejectWithValue }) => {
   try {
     const response = await axios(url);
@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk(
   'users/loginUser',
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://127.0.0.1:3001/users/sign_in', userData, {
+      const response = await axios.post('https://carbooker.onrender.com/users/sign_in', userData, {
         withCredentials: true,
       });
       localStorage.setItem('currentUser', JSON.stringify(response.data.user));
@@ -46,7 +46,7 @@ export const signOutUser = createAsyncThunk(
   'users/signOutUser',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.delete('http://127.0.0.1:3001/users/sign_out', {
+      const response = await axios.delete('https://carbooker.onrender.com/users/sign_out', {
         withCredentials: true,
       });
       localStorage.removeItem('currentUser');
