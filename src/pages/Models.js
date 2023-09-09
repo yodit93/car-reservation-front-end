@@ -1,34 +1,49 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../Styles/models.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+import { useMediaQuery } from 'react-responsive';
 import NavigationPanel from '../Components/Navigation/NavigationPanel';
-import { scrollLeft, scrollRight, handleScroll } from '../Components/Home/scrollUtilis';
 import { getCars } from '../Redux/carsSlice';
 import CarModel from '../Components/Home/CarModel.js';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { CustomPrevArrow, CustomNextArrow } from '../Components/Home/scrollUtilis.js';
 
 const Cars = () => {
   const { cars, error, isLoading } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
-  const [isFirstVisible, setIsFirstVisible] = useState(true);
-  const [isLastVisible, setIsLastVisible] = useState(false);
-  const [isPrevDisabled, setIsPrevDisabled] = useState(true);
-  const [isNextDisabled, setIsNextDisabled] = useState(false);
-  const containerRef = useRef(null);
-  const prevBtnRef = useRef(null);
-  const nextBtnRef = useRef(null);
-
-  const container = containerRef.current;
-
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [totalSlides, setTotalSlides] = useState(0);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch]);
 
   useEffect(() => {
-    setIsPrevDisabled(isFirstVisible);
-    setIsNextDisabled(isLastVisible);
-  }, [isFirstVisible, isLastVisible]);
+    setTotalSlides(cars.length);
+  }, [cars]);
+
+  const mobileSettings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow currentSlide={currentSlide} />,
+    nextArrow: <CustomNextArrow totalSlides={totalSlides} currentSlide={currentSlide} />,
+  };
+  const desktopSettings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow currentSlide={currentSlide} />,
+    nextArrow: <CustomNextArrow totalSlides={totalSlides} currentSlide={currentSlide} />,
+  };
+  const settings = isMobile ? mobileSettings : desktopSettings;
   return (
     <>
       <div className="home-container">
@@ -47,36 +62,24 @@ const Cars = () => {
               <p className="header-subtitle">The most recent models of our cars</p>
               <div className="dashed-line" />
             </div>
-            <div className="wrap">
-              <button
-                type="button"
-                className={`prev btn ${isPrevDisabled ? 'disabled' : ''}`}
-                onClick={() => scrollLeft(container)}
-                disabled={isPrevDisabled}
-                ref={prevBtnRef}
-              >
-                <BiLeftArrow />
-              </button>
-              <div
-                className="cars"
-                ref={containerRef}
-                onScroll={() => handleScroll(container, setIsFirstVisible, setIsLastVisible)}
+
+            <div className="cars">
+              <Slider
+                dots={settings.dots}
+                infinite={settings.infinite}
+                speed={settings.speed}
+                slidesToShow={settings.slidesToShow}
+                slidesToScroll={settings.slidesToScroll}
+                beforeChange={(oldIndex, newIndex) => setCurrentSlide(newIndex)}
+                prevArrow={settings.prevArrow}
+                nextArrow={settings.nextArrow}
               >
                 {cars.map((car) => (
                   <Link to={`cars/${car.id}`} key={car.id} className="card">
                     <CarModel car={car} />
                   </Link>
                 ))}
-              </div>
-              <button
-                type="button"
-                className={`next btn ${isNextDisabled ? 'disabled' : ''}`}
-                onClick={() => scrollRight(container)}
-                disabled={isNextDisabled}
-                ref={nextBtnRef}
-              >
-                <BiRightArrow />
-              </button>
+              </Slider>
             </div>
           </div>
           )}
