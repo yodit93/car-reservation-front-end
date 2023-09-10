@@ -139,7 +139,8 @@ body {
   margin-left: auto;
 }
 
-.prev.disabled, .next.disabled {
+.prev.disabled,
+.next.disabled {
   background-color: #cecaca;
 }
 
@@ -204,7 +205,7 @@ a {
   .custom-prev {
     left: -38px;
   }
-  
+
   .custom-next {
     right: -38px;
   }
@@ -284,7 +285,7 @@ a {
   .custom-prev {
     left: -50px;
   }
-  
+
   .custom-next {
     right: -50px;
   }
