@@ -3,9 +3,7 @@ import SocialIcons from '../Navigation/SocialIcons.js';
 
 const CarModel = ({ car }) => (
   <div className="card" key={car.id}>
-    <div className="img-cont">
-      <img className="img" src={car.image} alt={car.name} />
-    </div>
+    <img className="img" src={car.image} alt={car.name} />
     <h5 className="card-title">
       {car.name}
     </h5>

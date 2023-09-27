@@ -10,6 +10,8 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+    - [� API Documentation ](#-api-documentation-)
     - [ Kanban Board ](#-kanban-board-)
     - [ Rails Backend ](#-rails-backend-)
 - [💻 Getting Started](#getting-started)
@@ -72,7 +74,16 @@ Cabooker is a user-friendly and efficient car booking application that empowers 
 - User can add Cars
 - User can delete his/her reservation
 
-  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+> Link to deployed project.
+
+- [Live Demo Link](https://car-reservation-app.onrender.com)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- KANBAN BOARD -->

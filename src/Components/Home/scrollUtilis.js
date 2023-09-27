@@ -1,36 +1,54 @@
-export const scrollLeft = (container) => {
-  let scrollAmount;
-  if (window.innerWidth <= 768) {
-    scrollAmount = container.offsetWidth; // Adjust the scroll amount for mobile devices
-  } else {
-    scrollAmount = container.offsetWidth / 2; // Default scroll amount for desktop devices
-  }
-  container.scrollTo({
-    left: container.scrollLeft - scrollAmount,
-    behavior: 'smooth',
-  });
+import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
+import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive';
+
+export const CustomPrevArrow = ({ onClick, currentSlide }) => (
+  <div
+    className="custom-arrow custom-prev"
+    onClick={onClick}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        onClick();
+      }
+    }}
+    role="button"
+    tabIndex={0}
+    aria-label="Previous"
+  >
+    <button type="button" className={`prev btn ${currentSlide === 0 ? 'disabled' : ''}`}>
+      <BiLeftArrow />
+    </button>
+  </div>
+);
+export const CustomNextArrow = ({ onClick, totalSlides, currentSlide }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  return (
+    <div
+      className="custom-arrow custom-next"
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onClick();
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label="Next"
+    >
+      <button type="button" className={`next btn ${currentSlide === (isMobile ? totalSlides - 1 : totalSlides - 3) ? 'disabled' : ''}`}>
+        <BiRightArrow />
+      </button>
+    </div>
+  );
 };
 
-export const scrollRight = (container) => {
-  let scrollAmount;
-  if (window.innerWidth <= 768) {
-    scrollAmount = container.offsetWidth; // Adjust the scroll amount for mobile devices
-  } else {
-    scrollAmount = container.offsetWidth / 2; // Default scroll amount for desktop devices
-  }
-  container.scrollTo({
-    left: container.scrollLeft + scrollAmount,
-    behavior: 'smooth',
-  });
+CustomPrevArrow.propTypes = {
+  onClick: PropTypes.func.isRequired, // Adjust the type as needed
+  currentSlide: PropTypes.number.isRequired,
 };
 
-export const handleScroll = (container, setIsFirstVisible, setIsLastVisible) => {
-  const firstItem = container.firstElementChild;
-  const containerRect1 = container.getBoundingClientRect();
-  const firstItemRect = firstItem.getBoundingClientRect();
-  setIsFirstVisible(firstItemRect.left >= containerRect1.left);
-  const lastItem = container.lastElementChild;
-  const containerRect = container.getBoundingClientRect();
-  const lastItemRect = lastItem.getBoundingClientRect();
-  setIsLastVisible(lastItemRect.right <= containerRect.right);
+CustomNextArrow.propTypes = {
+  onClick: PropTypes.func.isRequired, // Adjust the type as needed
+  currentSlide: PropTypes.number.isRequired,
+  totalSlides: PropTypes.number.isRequired,
 };
