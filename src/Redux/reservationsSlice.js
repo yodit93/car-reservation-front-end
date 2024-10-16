@@ -7,7 +7,7 @@ const initialState = {
   isLoading: false,
 };
 
-const url = 'https://dub81b519454d.cloudfront.net/api/v1/reservations';
+const url = 'https://carbooker-backend.onrender.com/api/v1/reservations';
 export const getReservations = createAsyncThunk('reservations/getReservations', async (_, { rejectWithValue }) => {
   try {
     const response = await axios(url);
